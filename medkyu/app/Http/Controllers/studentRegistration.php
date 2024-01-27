@@ -38,6 +38,12 @@ class studentRegistration extends Controller
         $email = $regno . '@std.kyu.ac.ug';
         $avatar = $stdData['avatar'];
 
+        //Check if the user already exists
+        if(User::where('email', $email)->exists()){
+            return redirect()->back()->with('error', 'User already exists!');
+        }
+        
+
         // Create the user
         $user = User::create([
             'name' => $surname,
@@ -47,6 +53,9 @@ class studentRegistration extends Controller
         ]);
 
         Auth::login($user);
+
+        
+        
 
         return redirect()->route('dashboard')->with('success', 'User created successfully!');
     }
@@ -58,6 +67,7 @@ class studentRegistration extends Controller
 
         if($response->successful()){
             $data = $response->json();
+            dd($data);
             $stdData = $data['data']['student'];
             return $stdData;
         }
