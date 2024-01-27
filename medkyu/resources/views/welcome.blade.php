@@ -59,8 +59,8 @@
         <!-- ======= Hero Section ======= -->
         <section id="hero" class="d-flex align-items-center">
           <div class="container">
-            <h1>Welcome to {{ config('app.name', 'medkyu') }}</h1>
-            <h2>We are team of talented designers making websites with Bootstrap</h2>
+            <h1>Welcome to <br>KYU MEDICAL CENTER</h1>
+            {{-- <h2>Let's get you</h2> --}}
             <a href="#about" class="btn-get-started scrollto">Get Started</a>
           </div>
         </section><!-- End Hero -->
@@ -74,10 +74,9 @@
               <div class="row">
                 <div class="col-lg-4 d-flex align-items-stretch">
                   <div class="content">
-                    <h3>Why Choose {{ config('app.name', 'medkyu') }}?</h3>
+                    <h3>Our Mandate</h3>
                     <p>
-                      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Duis aute irure dolor in reprehenderit
-                      Asperiores dolores sed et. Tenetur quia eos. Autem tempore quibusdam vel necessitatibus optio ad corporis.
+                        The mandate of the medical centre is to provide health services to the Kyambogo University community that is students, staff, staff families and other individuals from the neighbourhood community.
                     </p>
                     <div class="text-center">
                       <a href="#" class="more-btn">Learn More <i class="bx bx-chevron-right"></i></a>
@@ -90,22 +89,22 @@
                       <div class="col-xl-4 d-flex align-items-stretch">
                         <div class="icon-box mt-4 mt-xl-0">
                           <i class="bx bx-receipt"></i>
-                          <h4>Corporis voluptates sit</h4>
-                          <p>Consequuntur sunt aut quasi enim aliquam quae harum pariatur laboris nisi ut aliquip</p>
+                          <h4>OUT–PATIENT SERVICES</h4>
+                          {{-- <p>Consequuntur sunt aut quasi enim aliquam quae harum pariatur laboris nisi ut aliquip</p> --}}
                         </div>
                       </div>
                       <div class="col-xl-4 d-flex align-items-stretch">
                         <div class="icon-box mt-4 mt-xl-0">
                           <i class="bx bx-cube-alt"></i>
-                          <h4>Ullamco laboris ladore pan</h4>
-                          <p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt</p>
+                          <h4>NURSING CARE</h4>
+                          {{-- <p>Kyambogo University Medical Centre has competent nurses who undergo regular and continuous professional development. They regularly receive customer care, continuous quality improvement and Emergency scene management training among others.</p> --}}
                         </div>
                       </div>
                       <div class="col-xl-4 d-flex align-items-stretch">
                         <div class="icon-box mt-4 mt-xl-0">
                           <i class="bx bx-images"></i>
-                          <h4>Labore consequatur</h4>
-                          <p>Aut suscipit aut cum nemo deleniti aut omnis. Doloribus ut maiores omnis facere</p>
+                          <h4>AMBULANCE SERVICES</h4>
+                          {{-- <p>AKyambogo University Medical Centre, provides 24-hour ambulance services, run by a well-trained team of emergence medical technicians responding to different incidents and emergencies within the community.</p> --}}
                         </div>
                       </div>
                     </div>
@@ -126,27 +125,8 @@
                 </div>
 
                 <div class="col-xl-7 col-lg-6 icon-boxes d-flex flex-column align-items-stretch justify-content-center py-5 px-lg-5">
-                  <h3>Enim quis est voluptatibus aliquid consequatur fugiat</h3>
-                  <p>Esse voluptas cumque vel exercitationem. Reiciendis est hic accusamus. Non ipsam et sed minima temporibus laudantium. Soluta voluptate sed facere corporis dolores excepturi. Libero laboriosam sint et id nulla tenetur. Suscipit aut voluptate.</p>
-
-                  <div class="icon-box">
-                    <div class="icon"><i class="bx bx-fingerprint"></i></div>
-                    <h4 class="title"><a href="">Lorem Ipsum</a></h4>
-                    <p class="description">Voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident</p>
-                  </div>
-
-                  <div class="icon-box">
-                    <div class="icon"><i class="bx bx-gift"></i></div>
-                    <h4 class="title"><a href="">Nemo Enim</a></h4>
-                    <p class="description">At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque</p>
-                  </div>
-
-                  <div class="icon-box">
-                    <div class="icon"><i class="bx bx-atom"></i></div>
-                    <h4 class="title"><a href="">Dine Pad</a></h4>
-                    <p class="description">Explicabo est voluptatum asperiores consequatur magnam. Et veritatis odit. Sunt aut deserunt minus aut eligendi omnis</p>
-                  </div>
-
+                    <h3>Backgroud</h3>
+                    <p>Kyambogo University Medical Center was established in 2003 following the merger of the three former Institutions of Higher Education i.e. the Uganda Polytechnics Kyambogo (UPK), Uganda National Institute of Special Education (UNISE) and the Institute of Teacher Education Kyambogo (ITEK). Before the merger, each institution operated a health unit and provided free services to a student population of 8000. Following the creation of the University, the health services were merged to form one health service delivery unit referred to as the University Medical Center currently serving a population of 33,000 students (Academic year 2016/18), 911 staff members & 2981 dependents.</p>
                 </div>
               </div>
 
@@ -162,32 +142,32 @@
                 <div class="col-lg-3 col-md-6">
                   <div class="count-box">
                     <i class="fas fa-user-md"></i>
-                    <span data-purecounter-start="0" data-purecounter-end="85" data-purecounter-duration="1" class="purecounter"></span>
-                    <p>Doctors</p>
+                    <span data-purecounter-start="0" data-purecounter-end="3" data-purecounter-duration="1" class="purecounter"></span>
+                    <p>Medical Officers</p>
                   </div>
                 </div>
 
                 <div class="col-lg-3 col-md-6 mt-5 mt-md-0">
                   <div class="count-box">
                     <i class="far fa-hospital"></i>
-                    <span data-purecounter-start="0" data-purecounter-end="18" data-purecounter-duration="1" class="purecounter"></span>
-                    <p>Departments</p>
+                    <span data-purecounter-start="0" data-purecounter-end="4" data-purecounter-duration="1" class="purecounter"></span>
+                    <p>Clinical Officers</p>
                   </div>
                 </div>
 
                 <div class="col-lg-3 col-md-6 mt-5 mt-lg-0">
                   <div class="count-box">
                     <i class="fas fa-flask"></i>
-                    <span data-purecounter-start="0" data-purecounter-end="12" data-purecounter-duration="1" class="purecounter"></span>
-                    <p>Research Labs</p>
+                    <span data-purecounter-start="0" data-purecounter-end="2" data-purecounter-duration="1" class="purecounter"></span>
+                    <p>Lab technicians</p>
                   </div>
                 </div>
 
                 <div class="col-lg-3 col-md-6 mt-5 mt-lg-0">
                   <div class="count-box">
                     <i class="fas fa-award"></i>
-                    <span data-purecounter-start="0" data-purecounter-end="150" data-purecounter-duration="1" class="purecounter"></span>
-                    <p>Awards</p>
+                    <span data-purecounter-start="0" data-purecounter-end="10" data-purecounter-duration="1" class="purecounter"></span>
+                    <p>nurses</p>
                   </div>
                 </div>
 
@@ -209,7 +189,7 @@
                 <div class="col-lg-4 col-md-6 d-flex align-items-stretch">
                   <div class="icon-box">
                     <div class="icon"><i class="fas fa-heartbeat"></i></div>
-                    <h4><a href="">Lorem Ipsum</a></h4>
+                    <h4><a href="">Outpatient and inpatient</a></h4>
                     <p>Voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi</p>
                   </div>
                 </div>
@@ -217,7 +197,7 @@
                 <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4 mt-md-0">
                   <div class="icon-box">
                     <div class="icon"><i class="fas fa-pills"></i></div>
-                    <h4><a href="">Sed ut perspiciatis</a></h4>
+                    <h4><a href="">HIV counseling and testing</a></h4>
                     <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore</p>
                   </div>
                 </div>
@@ -225,7 +205,7 @@
                 <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4 mt-lg-0">
                   <div class="icon-box">
                     <div class="icon"><i class="fas fa-hospital-user"></i></div>
-                    <h4><a href="">Magni Dolores</a></h4>
+                    <h4><a href="">Family planning</a></h4>
                     <p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia</p>
                   </div>
                 </div>
@@ -233,7 +213,7 @@
                 <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4">
                   <div class="icon-box">
                     <div class="icon"><i class="fas fa-dna"></i></div>
-                    <h4><a href="">Nemo Enim</a></h4>
+                    <h4><a href="">Minor surgery</a></h4>
                     <p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis</p>
                   </div>
                 </div>
@@ -241,7 +221,7 @@
                 <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4">
                   <div class="icon-box">
                     <div class="icon"><i class="fas fa-wheelchair"></i></div>
-                    <h4><a href="">Dele cardo</a></h4>
+                    <h4><a href="">Laboratory services</a></h4>
                     <p>Quis consequatur saepe eligendi voluptatem consequatur dolor consequuntur</p>
                   </div>
                 </div>
@@ -249,10 +229,34 @@
                 <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4">
                   <div class="icon-box">
                     <div class="icon"><i class="fas fa-notes-medical"></i></div>
-                    <h4><a href="">Divera don</a></h4>
+                    <h4><a href="">Dental services</a></h4>
                     <p>Modi nostrum vel laborum. Porro fugit error sit minus sapiente sit aspernatur</p>
                   </div>
                 </div>
+
+                <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4">
+                    <div class="icon-box">
+                      <div class="icon"><i class="fas fa-notes-medical"></i></div>
+                      <h4><a href="">Ambulance services</a></h4>
+                      <p>Modi nostrum vel laborum. Porro fugit error sit minus sapiente sit aspernatur</p>
+                    </div>
+                  </div>
+
+                  <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4">
+                    <div class="icon-box">
+                      <div class="icon"><i class="fas fa-notes-medical"></i></div>
+                      <h4><a href="">Anti-retro viral therapy services</a></h4>
+                      <p>Modi nostrum vel laborum. Porro fugit error sit minus sapiente sit aspernatur</p>
+                    </div>
+                  </div>
+
+                  <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4">
+                    <div class="icon-box">
+                      <div class="icon"><i class="fas fa-notes-medical"></i></div>
+                      <h4><a href="">Laboratory & Specialized Investigations</a></h4>
+                      <p>Modi nostrum vel laborum. Porro fugit error sit minus sapiente sit aspernatur</p>
+                    </div>
+                  </div>
 
               </div>
 
@@ -260,7 +264,7 @@
           </section><!-- End Services Section -->
 
           <!-- ======= Appointment Section ======= -->
-          <section id="appointment" class="appointment section-bg">
+          {{-- <section id="appointment" class="appointment section-bg">
             <div class="container">
 
               <div class="section-title">
@@ -321,10 +325,10 @@
               </form>
 
             </div>
-          </section><!-- End Appointment Section -->
+          </section><!-- End Appointment Section --> --}}
 
           <!-- ======= Departments Section ======= -->
-          <section id="departments" class="departments">
+          {{-- <section id="departments" class="departments">
             <div class="container">
 
               <div class="section-title">
@@ -419,7 +423,7 @@
               </div>
 
             </div>
-          </section><!-- End Departments Section -->
+          </section><!-- End Departments Section --> --}}
 
           <!-- ======= Doctors Section ======= -->
           <section id="doctors" class="doctors">
@@ -511,53 +515,74 @@
 
               <div class="section-title">
                 <h2>Frequently Asked Questions</h2>
-                <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia fugiat sit in iste officiis commodi quidem hic quas.</p>
+                {{-- <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia fugiat sit in iste officiis commodi quidem hic quas.</p> --}}
               </div>
 
               <div class="faq-list">
                 <ul>
                   <li data-aos="fade-up">
-                    <i class="bx bx-help-circle icon-help"></i> <a data-bs-toggle="collapse" class="collapse" data-bs-target="#faq-list-1">Non consectetur a erat nam at lectus urna duis? <i class="bx bx-chevron-down icon-show"></i><i class="bx bx-chevron-up icon-close"></i></a>
+                    <i class="bx bx-help-circle icon-help"></i> <a data-bs-toggle="collapse" class="collapse" data-bs-target="#faq-list-1">Where is the medical centre located?<i class="bx bx-chevron-down icon-show"></i><i class="bx bx-chevron-up icon-close"></i></a>
                     <div id="faq-list-1" class="collapse show" data-bs-parent=".faq-list">
                       <p>
-                        Feugiat pretium nibh ipsum consequat. Tempus iaculis urna id volutpat lacus laoreet non curabitur gravida. Venenatis lectus magna fringilla urna porttitor rhoncus dolor purus non.
+                        The University Medical centre is located opposite the main gate east campus. It is in the same complex with the Home Economics Department and shares a fence with Nabisunsa Girls Schools
                       </p>
                     </div>
                   </li>
 
                   <li data-aos="fade-up" data-aos-delay="100">
-                    <i class="bx bx-help-circle icon-help"></i> <a data-bs-toggle="collapse" data-bs-target="#faq-list-2" class="collapsed">Feugiat scelerisque varius morbi enim nunc? <i class="bx bx-chevron-down icon-show"></i><i class="bx bx-chevron-up icon-close"></i></a>
+                    <i class="bx bx-help-circle icon-help"></i> <a data-bs-toggle="collapse" data-bs-target="#faq-list-2" class="collapsed">Does medical centre have ambulance services ?<i class="bx bx-chevron-down icon-show"></i><i class="bx bx-chevron-up icon-close"></i></a>
                     <div id="faq-list-2" class="collapse" data-bs-parent=".faq-list">
                       <p>
-                        Dolor sit amet consectetur adipiscing elit pellentesque habitant morbi. Id interdum velit laoreet id donec ultrices. Fringilla phasellus faucibus scelerisque eleifend donec pretium. Est pellentesque elit ullamcorper dignissim. Mauris ultrices eros in cursus turpis massa tincidunt dui.
+                        In case of emergency or critically ill cases, the University Ambulance stationed at the medical centre shall transport such case to the medical centre.
+                      </p>
+                      <p>
+                        NB: Staff on duty is to be contacted to arrange for the services.
                       </p>
                     </div>
                   </li>
 
                   <li data-aos="fade-up" data-aos-delay="200">
-                    <i class="bx bx-help-circle icon-help"></i> <a data-bs-toggle="collapse" data-bs-target="#faq-list-3" class="collapsed">Dolor sit amet consectetur adipiscing elit? <i class="bx bx-chevron-down icon-show"></i><i class="bx bx-chevron-up icon-close"></i></a>
+                    <i class="bx bx-help-circle icon-help"></i> <a data-bs-toggle="collapse" data-bs-target="#faq-list-3" class="collapsed">What are the services offered at the medical centre ?<i class="bx bx-chevron-down icon-show"></i><i class="bx bx-chevron-up icon-close"></i></a>
                     <div id="faq-list-3" class="collapse" data-bs-parent=".faq-list">
-                      <p>
-                        Eleifend mi in nulla posuere sollicitudin aliquam ultrices sagittis orci. Faucibus pulvinar elementum integer enim. Sem nulla pharetra diam sit amet nisl suscipit. Rutrum tellus pellentesque eu tincidunt. Lectus urna duis convallis convallis tellus. Urna molestie at elementum eu facilisis sed odio morbi quis
-                      </p>
+                        <ul>
+                            <li>Treatment of the sick both inpatients and outpatients</li>
+                            <li>Laboratory services</li>
+                            <li>Voluntary Counseling and Testing for HIV (VCT)</li>
+                            <li>Antiretroviral Therapy (ART) (Provision of HIV drugs</li>
+                            <li>Dental Services</li>
+                            <li>Private wing services to the public</li>
+                            <li>Over counter prescription (private wing)</li>
+                        </ul>
                     </div>
                   </li>
 
                   <li data-aos="fade-up" data-aos-delay="300">
-                    <i class="bx bx-help-circle icon-help"></i> <a data-bs-toggle="collapse" data-bs-target="#faq-list-4" class="collapsed">Tempus quam pellentesque nec nam aliquam sem et tortor consequat? <i class="bx bx-chevron-down icon-show"></i><i class="bx bx-chevron-up icon-close"></i></a>
+                    <i class="bx bx-help-circle icon-help"></i> <a data-bs-toggle="collapse" data-bs-target="#faq-list-4" class="collapsed">Accessing health services after office hours ? <i class="bx bx-chevron-down icon-show"></i><i class="bx bx-chevron-up icon-close"></i></a>
                     <div id="faq-list-4" class="collapse" data-bs-parent=".faq-list">
                       <p>
-                        Molestie a iaculis at erat pellentesque adipiscing commodo. Dignissim suspendisse in est ante in. Nunc vel risus commodo viverra maecenas accumsan. Sit amet nisl suscipit adipiscing bibendum est. Purus gravida quis blandit turpis cursus in.
+                        After 9.00pm, students should first contact the security guard on duty
+                      </p>
+                      <p>
+                        He/she will then assist the patient to inform the medical staff on duty who stay in the house next to the medical centre.
+                      </p>
+                      <p>
+                        Students are advised to report either with a health secretary or health minister who contacts the security guard on duty.
                       </p>
                     </div>
                   </li>
 
                   <li data-aos="fade-up" data-aos-delay="400">
-                    <i class="bx bx-help-circle icon-help"></i> <a data-bs-toggle="collapse" data-bs-target="#faq-list-5" class="collapsed">Tortor vitae purus faucibus ornare. Varius vel pharetra vel turpis nunc eget lorem dolor? <i class="bx bx-chevron-down icon-show"></i><i class="bx bx-chevron-up icon-close"></i></a>
+                    <i class="bx bx-help-circle icon-help"></i> <a data-bs-toggle="collapse" data-bs-target="#faq-list-5" class="collapsed">What is the procedure of accessing the facility ?<i class="bx bx-chevron-down icon-show"></i><i class="bx bx-chevron-up icon-close"></i></a>
                     <div id="faq-list-5" class="collapse" data-bs-parent=".faq-list">
-                      <p>
-                        Laoreet sit amet cursus sit amet dictum sit amet justo. Mauris vitae ultricies leo integer malesuada nunc vel. Tincidunt eget nullam non nisi est sit amet. Turpis nunc eget lorem dolor sed. Ut venenatis tellus in metus vulputate eu scelerisque.
-                      </p>
+                        <p>Students must abide by all verbal and written advice relating to health and safety matters.</p>
+                        <ul>
+                            <li>All Students undergo a medical Examination before admission into the University</li>
+                            <li>A Medical records file for each student is opened on completion of the exercise. Those found with diseases such as Tuberculosis shall be isolated and given treatment for as long as they are considered infectious.</li>
+                            <li>It will be the responsibility of the student to adhere to the eligibility procedure in order to protect his/her rights and privilege of accessing the services</li>
+                            <li>Students are encouraged to bring to the attention of University any matters of health, safety and welfare that may arise during their stay at the University.</li>
+                            <li>For those that require special attention on a diet, the students shall seek special permission from the Director, Medical Services.</li>
+                        </ul>
+                        <p>NB. (i) The University shall provide health cover to registered students only and not their dependents.</p>
                     </div>
                   </li>
 
@@ -568,7 +593,7 @@
           </section><!-- End Frequently Asked Questions Section -->
 
           <!-- ======= Testimonials Section ======= -->
-          <section id="testimonials" class="testimonials">
+          {{-- <section id="testimonials" class="testimonials">
             <div class="container">
 
               <div class="testimonials-slider swiper" data-aos="fade-up" data-aos-delay="100">
@@ -654,10 +679,10 @@
               </div>
 
             </div>
-          </section><!-- End Testimonials Section -->
+          </section><!-- End Testimonials Section --> --}}
 
           <!-- ======= Gallery Section ======= -->
-          <section id="gallery" class="gallery">
+          {{-- <section id="gallery" class="gallery">
             <div class="container">
 
               <div class="section-title">
@@ -736,7 +761,7 @@
               </div>
 
             </div>
-          </section><!-- End Gallery Section -->
+          </section><!-- End Gallery Section --> --}}
 
           <!-- ======= Contact Section ======= -->
           <section id="contact" class="contact">
@@ -749,7 +774,8 @@
             </div>
 
             <div>
-              <iframe style="border:0; width: 100%; height: 350px;" src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d12097.433213460943!2d-74.0062269!3d40.7101282!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xb89d1fe6bc499443!2sDowntown+Conference+Center!5e0!3m2!1smk!2sbg!4v1539943755621" frameborder="0" allowfullscreen></iframe>
+                <iframe style="border:0; width: 100%; height: 350px;" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3989.745728931553!2d32.63012547407265!3d0.34562436398240226!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x177db977429a82b5%3A0xb30e97be1902ad52!2sKyambogo%20University%20Medical%20Center!5e0!3m2!1sen!2sus!4v1706354928736!5m2!1sen!2sus" allowfullscreen loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+              {{-- <iframe style="border:0; width: 100%; height: 350px;" src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d12097.433213460943!2d-74.0062269!3d40.7101282!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xb89d1fe6bc499443!2sDowntown+Conference+Center!5e0!3m2!1smk!2sbg!4v1539943755621" frameborder="0" allowfullscreen></iframe> --}}
             </div>
 
             <div class="container">

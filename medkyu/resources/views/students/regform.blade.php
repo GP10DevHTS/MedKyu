@@ -8,6 +8,7 @@
 
 {{-- more breadcrumbs --}}
 @section('breadcrumbs')
+    <li>MedKyu</li>
     <li>Register</li>
 @endsection
 
