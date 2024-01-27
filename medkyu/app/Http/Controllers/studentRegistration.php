@@ -8,6 +8,8 @@ use Illuminate\Support\Facades\Hash;
 use Illuminate\Validation\Rules\Password;
 use Illuminate\Support\Facades\Http;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Http\UploadedFile;
+use Illuminate\Support\Facades\Storage;
 
 class studentRegistration extends Controller
 {
@@ -49,8 +51,15 @@ class studentRegistration extends Controller
             'name' => $surname,
             'email' => $email,
             'password' => $password,
-            // 'profile_photo_url' => $avatar,
+            // =====>>> 'profile_photo_path' => "https://myportal.kyu.ac.ug/photos/student-photos/".$avatar,
         ]);
+
+
+          // Download the avatar from the remote server and store it locally
+         $photo = "https://myportal.kyu.ac.ug/photos/student-photos/".$avatar;
+         $user->profile_photo_path = $photo;
+         $user->save();
+
 
         Auth::login($user);
 
