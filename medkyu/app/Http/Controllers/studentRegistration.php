@@ -76,7 +76,7 @@ class studentRegistration extends Controller
 
         if($response->successful()){
             $data = $response->json();
-            dd($data);
+            
             $stdData = $data['data']['student'];
             return $stdData;
         }
