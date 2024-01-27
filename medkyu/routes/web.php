@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\studentRegistration;
 
 /*
 |--------------------------------------------------------------------------
@@ -16,6 +17,9 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 })->name('home');
+
+Route::get('/student/reg',[studentRegistration::class, 'index'])->name('student.reg');
+Route::post('/student/reg',[studentRegistration::class, 'create'])->name('student.reg.post');
 
 Route::middleware([
     'auth:sanctum',

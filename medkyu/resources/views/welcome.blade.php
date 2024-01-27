@@ -8,14 +8,14 @@
         <title>{{ config('app.name', 'medkyu') }}</title>
         <meta content="" name="description">
         <meta content="" name="keywords">
-      
+
         <!-- Favicons -->
         <link href="{{ asset('Medilab/assets/img/favicon.png')}}" rel="icon">
         <link href="{{ asset('Medilab/assets/img/apple-touch-icon.png')}}" rel="apple-touch-icon">
-      
+
         <!-- Google Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
-      
+
         <!-- Vendor CSS Files -->
         <link href="{{ asset('Medilab/assets/vendor/fontawesome-free/css/all.min.css')}}" rel="stylesheet">
         <link href="{{ asset('Medilab/assets/vendor/animate.css/animate.min.css')}}" rel="stylesheet">
@@ -25,18 +25,18 @@
         <link href="{{ asset('Medilab/assets/vendor/glightbox/css/glightbox.min.css')}}" rel="stylesheet">
         <link href="{{ asset('Medilab/assets/vendor/remixicon/remixicon.css')}}" rel="stylesheet">
         <link href="{{ asset('Medilab/assets/vendor/swiper/swiper-bundle.min.css')}}" rel="stylesheet">
-      
+
         <!-- Template Main CSS File -->
         <link href="{{ asset('Medilab/assets/css/style.css')}}" rel="stylesheet">
-      
+
         <!-- =======================================================
         * Template Name: {{ config('app.name', 'medkyu') }}
-      
+
         ======================================================== -->
       </head>
-      
+
       <body>
-      
+
         <!-- ======= Top Bar ======= -->
         <div id="topbar" class="d-flex align-items-center fixed-top">
           <div class="container d-flex justify-content-between">
@@ -52,64 +52,10 @@
             </div>
           </div>
         </div>
-      
-        <!-- ======= Header ======= -->
-        <header id="header" class="fixed-top">
-          <div class="container d-flex align-items-center">
-      
-            <h1 class="logo me-auto"><a href="index.html">{{ config('app.name', 'medkyu') }}</a></h1>
-            <!-- Uncomment below if you prefer to use an image logo -->
-            <!-- <a href="index.html" class="logo me-auto"><img src="{{ asset('Medilab/assets/img/logo.png')}}" alt="" class="img-fluid"></a>-->
-      
-            <nav id="navbar" class="navbar order-last order-lg-0">
-              <ul>
-                <li><a class="nav-link scrollto active" href="#hero">Home</a></li>
-                <li><a class="nav-link scrollto" href="#about">About</a></li>
-                <li><a class="nav-link scrollto" href="#services">Services</a></li>
-                <li><a class="nav-link scrollto" href="#departments">Departments</a></li>
-                <li><a class="nav-link scrollto" href="#doctors">Doctors</a></li>
-                {{-- <li class="dropdown"><a href="#"><span>Drop Down</span> <i class="bi bi-chevron-down"></i></a>
-                  <ul>
-                    <li><a href="#">Drop Down 1</a></li>
-                    <li class="dropdown"><a href="#"><span>Deep Drop Down</span> <i class="bi bi-chevron-right"></i></a>
-                      <ul>
-                        <li><a href="#">Deep Drop Down 1</a></li>
-                        <li><a href="#">Deep Drop Down 2</a></li>
-                        <li><a href="#">Deep Drop Down 3</a></li>
-                        <li><a href="#">Deep Drop Down 4</a></li>
-                        <li><a href="#">Deep Drop Down 5</a></li>
-                      </ul>
-                    </li>
-                    <li><a href="#">Drop Down 2</a></li>
-                    <li><a href="#">Drop Down 3</a></li>
-                    <li><a href="#">Drop Down 4</a></li>
-                  </ul>
-                </li> --}}
-                <li><a class="nav-link scrollto" href="#contact">Contact</a></li>
-                <li>
-                    @if (Route::has('login'))
-                        <div class="sm:fixed sm:top-0 sm:right-0 p-6 text-right z-10">
-                            @auth
-                                <a href="{{ url('/dashboard') }}" class="nav-link scrollto">Dashboard</a>
-                            @else
-                                <a href="{{ route('login') }}" class="nav-link scrollto">Log in</a>
-        
-                                {{-- @if (Route::has('register'))
-                                    <a href="{{ route('register') }}" class="ml-4 nav-link scrollto">Register</a>
-                                @endif --}}
-                            @endauth
-                        </div>
-                    @endif
-                </li>
-              </ul>
-              <i class="bi bi-list mobile-nav-toggle"></i>
-            </nav><!-- .navbar -->
-      
-            {{-- <a href="#appointment" class="appointment-btn scrollto"><span class="d-none d-md-inline">Make an</span> Appointment</a> --}}
-            
-          </div>
-        </header><!-- End Header -->
-      
+
+        {{-- header --}}
+        @include('layouts.includes.site_header')
+
         <!-- ======= Hero Section ======= -->
         <section id="hero" class="d-flex align-items-center">
           <div class="container">
@@ -118,13 +64,13 @@
             <a href="#about" class="btn-get-started scrollto">Get Started</a>
           </div>
         </section><!-- End Hero -->
-      
+
         <main id="main">
-      
+
           <!-- ======= Why Us Section ======= -->
           <section id="why-us" class="why-us">
             <div class="container">
-      
+
               <div class="row">
                 <div class="col-lg-4 d-flex align-items-stretch">
                   <div class="content">
@@ -166,53 +112,53 @@
                   </div><!-- End .content-->
                 </div>
               </div>
-      
+
             </div>
           </section><!-- End Why Us Section -->
-      
+
           <!-- ======= About Section ======= -->
           <section id="about" class="about">
             <div class="container-fluid">
-      
+
               <div class="row">
                 <div class="col-xl-5 col-lg-6 video-box d-flex justify-content-center align-items-stretch position-relative">
                   <a href="https://www.youtube.com/watch?v=jDDaplaOz7Q" class="glightbox play-btn mb-4"></a>
                 </div>
-      
+
                 <div class="col-xl-7 col-lg-6 icon-boxes d-flex flex-column align-items-stretch justify-content-center py-5 px-lg-5">
                   <h3>Enim quis est voluptatibus aliquid consequatur fugiat</h3>
                   <p>Esse voluptas cumque vel exercitationem. Reiciendis est hic accusamus. Non ipsam et sed minima temporibus laudantium. Soluta voluptate sed facere corporis dolores excepturi. Libero laboriosam sint et id nulla tenetur. Suscipit aut voluptate.</p>
-      
+
                   <div class="icon-box">
                     <div class="icon"><i class="bx bx-fingerprint"></i></div>
                     <h4 class="title"><a href="">Lorem Ipsum</a></h4>
                     <p class="description">Voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident</p>
                   </div>
-      
+
                   <div class="icon-box">
                     <div class="icon"><i class="bx bx-gift"></i></div>
                     <h4 class="title"><a href="">Nemo Enim</a></h4>
                     <p class="description">At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque</p>
                   </div>
-      
+
                   <div class="icon-box">
                     <div class="icon"><i class="bx bx-atom"></i></div>
                     <h4 class="title"><a href="">Dine Pad</a></h4>
                     <p class="description">Explicabo est voluptatum asperiores consequatur magnam. Et veritatis odit. Sunt aut deserunt minus aut eligendi omnis</p>
                   </div>
-      
+
                 </div>
               </div>
-      
+
             </div>
           </section><!-- End About Section -->
-      
+
           <!-- ======= Counts Section ======= -->
           <section id="counts" class="counts">
             <div class="container">
-      
+
               <div class="row">
-      
+
                 <div class="col-lg-3 col-md-6">
                   <div class="count-box">
                     <i class="fas fa-user-md"></i>
@@ -220,7 +166,7 @@
                     <p>Doctors</p>
                   </div>
                 </div>
-      
+
                 <div class="col-lg-3 col-md-6 mt-5 mt-md-0">
                   <div class="count-box">
                     <i class="far fa-hospital"></i>
@@ -228,7 +174,7 @@
                     <p>Departments</p>
                   </div>
                 </div>
-      
+
                 <div class="col-lg-3 col-md-6 mt-5 mt-lg-0">
                   <div class="count-box">
                     <i class="fas fa-flask"></i>
@@ -236,7 +182,7 @@
                     <p>Research Labs</p>
                   </div>
                 </div>
-      
+
                 <div class="col-lg-3 col-md-6 mt-5 mt-lg-0">
                   <div class="count-box">
                     <i class="fas fa-award"></i>
@@ -244,21 +190,21 @@
                     <p>Awards</p>
                   </div>
                 </div>
-      
+
               </div>
-      
+
             </div>
           </section><!-- End Counts Section -->
-      
+
           <!-- ======= Services Section ======= -->
           <section id="services" class="services">
             <div class="container">
-      
+
               <div class="section-title">
                 <h2>Services</h2>
                 <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia fugiat sit in iste officiis commodi quidem hic quas.</p>
               </div>
-      
+
               <div class="row">
                 <div class="col-lg-4 col-md-6 d-flex align-items-stretch">
                   <div class="icon-box">
@@ -267,7 +213,7 @@
                     <p>Voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi</p>
                   </div>
                 </div>
-      
+
                 <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4 mt-md-0">
                   <div class="icon-box">
                     <div class="icon"><i class="fas fa-pills"></i></div>
@@ -275,7 +221,7 @@
                     <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore</p>
                   </div>
                 </div>
-      
+
                 <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4 mt-lg-0">
                   <div class="icon-box">
                     <div class="icon"><i class="fas fa-hospital-user"></i></div>
@@ -283,7 +229,7 @@
                     <p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia</p>
                   </div>
                 </div>
-      
+
                 <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4">
                   <div class="icon-box">
                     <div class="icon"><i class="fas fa-dna"></i></div>
@@ -291,7 +237,7 @@
                     <p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis</p>
                   </div>
                 </div>
-      
+
                 <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4">
                   <div class="icon-box">
                     <div class="icon"><i class="fas fa-wheelchair"></i></div>
@@ -299,7 +245,7 @@
                     <p>Quis consequatur saepe eligendi voluptatem consequatur dolor consequuntur</p>
                   </div>
                 </div>
-      
+
                 <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4">
                   <div class="icon-box">
                     <div class="icon"><i class="fas fa-notes-medical"></i></div>
@@ -307,21 +253,21 @@
                     <p>Modi nostrum vel laborum. Porro fugit error sit minus sapiente sit aspernatur</p>
                   </div>
                 </div>
-      
+
               </div>
-      
+
             </div>
           </section><!-- End Services Section -->
-      
+
           <!-- ======= Appointment Section ======= -->
           <section id="appointment" class="appointment section-bg">
             <div class="container">
-      
+
               <div class="section-title">
                 <h2>Make an Appointment</h2>
                 <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia fugiat sit in iste officiis commodi quidem hic quas.</p>
               </div>
-      
+
               <form action="forms/appointment.php" method="post" role="form" class="php-email-form">
                 <div class="row">
                   <div class="col-md-4 form-group">
@@ -361,7 +307,7 @@
                     <div class="validate"></div>
                   </div>
                 </div>
-      
+
                 <div class="form-group mt-3">
                   <textarea class="form-control" name="message" rows="5" placeholder="Message (Optional)"></textarea>
                   <div class="validate"></div>
@@ -373,19 +319,19 @@
                 </div>
                 <div class="text-center"><button type="submit">Make an Appointment</button></div>
               </form>
-      
+
             </div>
           </section><!-- End Appointment Section -->
-      
+
           <!-- ======= Departments Section ======= -->
           <section id="departments" class="departments">
             <div class="container">
-      
+
               <div class="section-title">
                 <h2>Departments</h2>
                 <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia fugiat sit in iste officiis commodi quidem hic quas.</p>
               </div>
-      
+
               <div class="row gy-4">
                 <div class="col-lg-3">
                   <ul class="nav nav-tabs flex-column">
@@ -471,21 +417,21 @@
                   </div>
                 </div>
               </div>
-      
+
             </div>
           </section><!-- End Departments Section -->
-      
+
           <!-- ======= Doctors Section ======= -->
           <section id="doctors" class="doctors">
             <div class="container">
-      
+
               <div class="section-title">
                 <h2>Doctors</h2>
                 <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia fugiat sit in iste officiis commodi quidem hic quas.</p>
               </div>
-      
+
               <div class="row">
-      
+
                 <div class="col-lg-6">
                   <div class="member d-flex align-items-start">
                     <div class="pic"><img src="{{ asset('Medilab/assets/img/doctors/doctors-1.jpg')}}" class="img-fluid" alt=""></div>
@@ -502,7 +448,7 @@
                     </div>
                   </div>
                 </div>
-      
+
                 <div class="col-lg-6 mt-4 mt-lg-0">
                   <div class="member d-flex align-items-start">
                     <div class="pic"><img src="{{ asset('Medilab/assets/img/doctors/doctors-2.jpg')}}" class="img-fluid" alt=""></div>
@@ -519,7 +465,7 @@
                     </div>
                   </div>
                 </div>
-      
+
                 <div class="col-lg-6 mt-4">
                   <div class="member d-flex align-items-start">
                     <div class="pic"><img src="{{ asset('Medilab/assets/img/doctors/doctors-3.jpg')}}" class="img-fluid" alt=""></div>
@@ -536,7 +482,7 @@
                     </div>
                   </div>
                 </div>
-      
+
                 <div class="col-lg-6 mt-4">
                   <div class="member d-flex align-items-start">
                     <div class="pic"><img src="{{ asset('Medilab/assets/img/doctors/doctors-4.jpg')}}" class="img-fluid" alt=""></div>
@@ -553,21 +499,21 @@
                     </div>
                   </div>
                 </div>
-      
+
               </div>
-      
+
             </div>
           </section><!-- End Doctors Section -->
-      
+
           <!-- ======= Frequently Asked Questions Section ======= -->
           <section id="faq" class="faq section-bg">
             <div class="container">
-      
+
               <div class="section-title">
                 <h2>Frequently Asked Questions</h2>
                 <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia fugiat sit in iste officiis commodi quidem hic quas.</p>
               </div>
-      
+
               <div class="faq-list">
                 <ul>
                   <li data-aos="fade-up">
@@ -578,7 +524,7 @@
                       </p>
                     </div>
                   </li>
-      
+
                   <li data-aos="fade-up" data-aos-delay="100">
                     <i class="bx bx-help-circle icon-help"></i> <a data-bs-toggle="collapse" data-bs-target="#faq-list-2" class="collapsed">Feugiat scelerisque varius morbi enim nunc? <i class="bx bx-chevron-down icon-show"></i><i class="bx bx-chevron-up icon-close"></i></a>
                     <div id="faq-list-2" class="collapse" data-bs-parent=".faq-list">
@@ -587,7 +533,7 @@
                       </p>
                     </div>
                   </li>
-      
+
                   <li data-aos="fade-up" data-aos-delay="200">
                     <i class="bx bx-help-circle icon-help"></i> <a data-bs-toggle="collapse" data-bs-target="#faq-list-3" class="collapsed">Dolor sit amet consectetur adipiscing elit? <i class="bx bx-chevron-down icon-show"></i><i class="bx bx-chevron-up icon-close"></i></a>
                     <div id="faq-list-3" class="collapse" data-bs-parent=".faq-list">
@@ -596,7 +542,7 @@
                       </p>
                     </div>
                   </li>
-      
+
                   <li data-aos="fade-up" data-aos-delay="300">
                     <i class="bx bx-help-circle icon-help"></i> <a data-bs-toggle="collapse" data-bs-target="#faq-list-4" class="collapsed">Tempus quam pellentesque nec nam aliquam sem et tortor consequat? <i class="bx bx-chevron-down icon-show"></i><i class="bx bx-chevron-up icon-close"></i></a>
                     <div id="faq-list-4" class="collapse" data-bs-parent=".faq-list">
@@ -605,7 +551,7 @@
                       </p>
                     </div>
                   </li>
-      
+
                   <li data-aos="fade-up" data-aos-delay="400">
                     <i class="bx bx-help-circle icon-help"></i> <a data-bs-toggle="collapse" data-bs-target="#faq-list-5" class="collapsed">Tortor vitae purus faucibus ornare. Varius vel pharetra vel turpis nunc eget lorem dolor? <i class="bx bx-chevron-down icon-show"></i><i class="bx bx-chevron-up icon-close"></i></a>
                     <div id="faq-list-5" class="collapse" data-bs-parent=".faq-list">
@@ -614,20 +560,20 @@
                       </p>
                     </div>
                   </li>
-      
+
                 </ul>
               </div>
-      
+
             </div>
           </section><!-- End Frequently Asked Questions Section -->
-      
+
           <!-- ======= Testimonials Section ======= -->
           <section id="testimonials" class="testimonials">
             <div class="container">
-      
+
               <div class="testimonials-slider swiper" data-aos="fade-up" data-aos-delay="100">
                 <div class="swiper-wrapper">
-      
+
                   <div class="swiper-slide">
                     <div class="testimonial-wrap">
                       <div class="testimonial-item">
@@ -642,7 +588,7 @@
                       </div>
                     </div>
                   </div><!-- End testimonial item -->
-      
+
                   <div class="swiper-slide">
                     <div class="testimonial-wrap">
                       <div class="testimonial-item">
@@ -657,7 +603,7 @@
                       </div>
                     </div>
                   </div><!-- End testimonial item -->
-      
+
                   <div class="swiper-slide">
                     <div class="testimonial-wrap">
                       <div class="testimonial-item">
@@ -672,7 +618,7 @@
                       </div>
                     </div>
                   </div><!-- End testimonial item -->
-      
+
                   <div class="swiper-slide">
                     <div class="testimonial-wrap">
                       <div class="testimonial-item">
@@ -687,7 +633,7 @@
                       </div>
                     </div>
                   </div><!-- End testimonial item -->
-      
+
                   <div class="swiper-slide">
                     <div class="testimonial-wrap">
                       <div class="testimonial-item">
@@ -702,27 +648,27 @@
                       </div>
                     </div>
                   </div><!-- End testimonial item -->
-      
+
                 </div>
                 <div class="swiper-pagination"></div>
               </div>
-      
+
             </div>
           </section><!-- End Testimonials Section -->
-      
+
           <!-- ======= Gallery Section ======= -->
           <section id="gallery" class="gallery">
             <div class="container">
-      
+
               <div class="section-title">
                 <h2>Gallery</h2>
                 <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia fugiat sit in iste officiis commodi quidem hic quas.</p>
               </div>
             </div>
-      
+
             <div class="container-fluid">
               <div class="row g-0">
-      
+
                 <div class="col-lg-3 col-md-4">
                   <div class="gallery-item">
                     <a href="{{ asset('Medilab/assets/img/gallery/gallery-1.jpg')}}" class="galelry-lightbox">
@@ -730,7 +676,7 @@
                     </a>
                   </div>
                 </div>
-      
+
                 <div class="col-lg-3 col-md-4">
                   <div class="gallery-item">
                     <a href="{{ asset('Medilab/assets/img/gallery/gallery-2.jpg')}}" class="galelry-lightbox">
@@ -738,7 +684,7 @@
                     </a>
                   </div>
                 </div>
-      
+
                 <div class="col-lg-3 col-md-4">
                   <div class="gallery-item">
                     <a href="{{ asset('Medilab/assets/img/gallery/gallery-3.jpg')}}" class="galelry-lightbox">
@@ -746,7 +692,7 @@
                     </a>
                   </div>
                 </div>
-      
+
                 <div class="col-lg-3 col-md-4">
                   <div class="gallery-item">
                     <a href="{{ asset('Medilab/assets/img/gallery/gallery-4.jpg')}}" class="galelry-lightbox">
@@ -754,7 +700,7 @@
                     </a>
                   </div>
                 </div>
-      
+
                 <div class="col-lg-3 col-md-4">
                   <div class="gallery-item">
                     <a href="{{ asset('Medilab/assets/img/gallery/gallery-5.jpg')}}" class="galelry-lightbox">
@@ -762,7 +708,7 @@
                     </a>
                   </div>
                 </div>
-      
+
                 <div class="col-lg-3 col-md-4">
                   <div class="gallery-item">
                     <a href="{{ asset('Medilab/assets/img/gallery/gallery-6.jpg')}}" class="galelry-lightbox">
@@ -770,7 +716,7 @@
                     </a>
                   </div>
                 </div>
-      
+
                 <div class="col-lg-3 col-md-4">
                   <div class="gallery-item">
                     <a href="{{ asset('Medilab/assets/img/gallery/gallery-7.jpg')}}" class="galelry-lightbox">
@@ -778,7 +724,7 @@
                     </a>
                   </div>
                 </div>
-      
+
                 <div class="col-lg-3 col-md-4">
                   <div class="gallery-item">
                     <a href="{{ asset('Medilab/assets/img/gallery/gallery-8.jpg')}}" class="galelry-lightbox">
@@ -786,29 +732,29 @@
                     </a>
                   </div>
                 </div>
-      
+
               </div>
-      
+
             </div>
           </section><!-- End Gallery Section -->
-      
+
           <!-- ======= Contact Section ======= -->
           <section id="contact" class="contact">
             <div class="container">
-      
+
               <div class="section-title">
                 <h2>Contact</h2>
                 <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia fugiat sit in iste officiis commodi quidem hic quas.</p>
               </div>
             </div>
-      
+
             <div>
               <iframe style="border:0; width: 100%; height: 350px;" src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d12097.433213460943!2d-74.0062269!3d40.7101282!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xb89d1fe6bc499443!2sDowntown+Conference+Center!5e0!3m2!1smk!2sbg!4v1539943755621" frameborder="0" allowfullscreen></iframe>
             </div>
-      
+
             <div class="container">
               <div class="row mt-5">
-      
+
                 <div class="col-lg-4">
                   <div class="info">
                     <div class="address">
@@ -816,25 +762,25 @@
                       <h4>Location:</h4>
                       <p>A108 Adam Street, New York, NY 535022</p>
                     </div>
-      
+
                     <div class="email">
                       <i class="bi bi-envelope"></i>
                       <h4>Email:</h4>
                       <p>info@example.com</p>
                     </div>
-      
+
                     <div class="phone">
                       <i class="bi bi-phone"></i>
                       <h4>Call:</h4>
                       <p>+1 5589 55488 55s</p>
                     </div>
-      
+
                   </div>
-      
+
                 </div>
-      
+
                 <div class="col-lg-8 mt-5 mt-lg-0">
-      
+
                   <form action="forms/contact.php" method="post" role="form" class="php-email-form">
                     <div class="row">
                       <div class="col-md-6 form-group">
@@ -857,23 +803,23 @@
                     </div>
                     <div class="text-center"><button type="submit">Send Message</button></div>
                   </form>
-      
+
                 </div>
-      
+
               </div>
-      
+
             </div>
           </section><!-- End Contact Section -->
-      
+
         </main><!-- End #main -->
-      
+
         <!-- ======= Footer ======= -->
         <footer id="footer">
-      
+
           <div class="footer-top">
             <div class="container">
               <div class="row">
-      
+
                 <div class="col-lg-3 col-md-6 footer-contact">
                   <h3>{{ config('app.name', 'medkyu') }}</h3>
                   <p>
@@ -884,7 +830,7 @@
                     <strong>Email:</strong> info@example.com<br>
                   </p>
                 </div>
-      
+
                 <div class="col-lg-2 col-md-6 footer-links">
                   <h4>Useful Links</h4>
                   <ul>
@@ -895,7 +841,7 @@
                     <li><i class="bx bx-chevron-right"></i> <a href="#">Privacy policy</a></li>
                   </ul>
                 </div>
-      
+
                 <div class="col-lg-3 col-md-6 footer-links">
                   <h4>Our Services</h4>
                   <ul>
@@ -906,7 +852,7 @@
                     <li><i class="bx bx-chevron-right"></i> <a href="#">Graphic Design</a></li>
                   </ul>
                 </div>
-      
+
                 <div class="col-lg-4 col-md-6 footer-newsletter">
                   <h4>Join Our Newsletter</h4>
                   <p>Tamen quem nulla quae legam multos aute sint culpa legam noster magna</p>
@@ -914,19 +860,19 @@
                     <input type="email" name="email"><input type="submit" value="Subscribe">
                   </form>
                 </div>
-      
+
               </div>
             </div>
           </div>
-      
+
           <div class="container d-md-flex py-4">
-      
+
             <div class="me-md-auto text-center text-md-start">
               <div class="copyright">
                 &copy; Copyright <strong><span>{{ config('app.name', 'medkyu') }}</span></strong>. All Rights Reserved
               </div>
               <div class="credits">
-               
+
                 Designed by <a href="#">Kirungi Hellena</a>
               </div>
             </div>
@@ -939,19 +885,19 @@
             </div>
           </div>
         </footer><!-- End Footer -->
-      
+
         <div id="preloader"></div>
         <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
-      
+
         <!-- Vendor JS Files -->
         <script src="{{ asset('Medilab/assets/vendor/purecounter/purecounter_vanilla.js')}}"></script>
         <script src="{{ asset('Medilab/assets/vendor/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
         <script src="{{ asset('Medilab/assets/vendor/glightbox/js/glightbox.min.js')}}"></script>
         <script src="{{ asset('Medilab/assets/vendor/swiper/swiper-bundle.min.js')}}"></script>
         <script src="{{ asset('Medilab/assets/vendor/php-email-form/validate.js')}}"></script>
-      
+
         <!-- Template Main JS File -->
         <script src="{{ asset('Medilab/assets/js/main.js')}}"></script>
-      
+
       </body>
 </html>
