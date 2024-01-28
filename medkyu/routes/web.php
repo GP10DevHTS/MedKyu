@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\loginController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\studentRegistration;
 
@@ -17,6 +18,8 @@ use App\Http\Controllers\studentRegistration;
 Route::get('/', function () {
     return view('welcome');
 })->name('home');
+
+// route::get('/login',[loginController::class,'index'])->name('login');
 
 Route::get('/student/reg',[studentRegistration::class, 'index'])->name('student.reg');
 Route::post('/student/reg',[studentRegistration::class, 'create'])->name('student.reg.post');

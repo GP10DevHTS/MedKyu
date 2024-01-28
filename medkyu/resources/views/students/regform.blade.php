@@ -38,7 +38,7 @@
                     {{-- <button type="submit" class="btn btn-primary bg-blue-500 text-white font-bold py-2 px-4 rounded">
                         Login
                     </button> --}}
-                    <button type="submit" class="btn btn-outline-primary"> Login</button>
+                    <button type="submit" class="btn btn-outline-primary">Register</button>
                 </form>
             </div>
         </div>

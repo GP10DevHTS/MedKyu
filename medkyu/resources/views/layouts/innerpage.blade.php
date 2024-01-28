@@ -29,7 +29,11 @@
         <!-- Template Main CSS File -->
         <link href="{{ asset('Medilab/assets/css/style.css')}}" rel="stylesheet">
         <link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet">
+<!-- Scripts -->
+@vite(['resources/css/app.css', 'resources/js/app.js'])
 
+<!-- Styles -->
+@livewireStyles
         <!-- =======================================================
         * Template Name: {{ config('app.name', 'medkyu') }}
 
@@ -379,7 +383,7 @@ button:focus{
 
     <!-- Template Main JS File -->
     <script src="{{ asset('Medilab/assets/js/main.js')}}"></script>
-
+    @livewireScripts
 </body>
 
 </html>

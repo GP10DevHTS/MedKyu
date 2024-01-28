@@ -37,13 +37,13 @@
               {{-- <li><a href="{{route('login')}}">MedKyu Portal</a></li> --}}
 
 
-              <li><a href="https://myportal.kyu.ac.ug/">Student Portal</a></li>
-              <li><a href="https://alumni.kyu.ac.ug">Alumni</a></li>
+              <li><a target="_blank" href="https://myportal.kyu.ac.ug/">Student Portal</a></li>
+              <li><a target="_blank" href="https://alumni.kyu.ac.ug">Alumni</a></li>
               <li class="dropdown"><a href="#"><span>Research</span> <i class="bi bi-chevron-right"></i></a>
                 <ul>
-                  <li><a href="https://kyuspace.kyu.ac.ug">KYU space</a></li>
-                  <li><a href="https://lib.kyu.ac.ug/">Library</a></li>
-                  <li><a href="https://kyu.ac.ug/category/kyambogo-in-media">KYU Media</a></li>
+                  <li><a target="_blank" href="https://kyuspace.kyu.ac.ug">KYU space</a></li>
+                  <li><a target="_blank" href="https://lib.kyu.ac.ug/">Library</a></li>
+                  <li><a target="_blank" href="https://kyu.ac.ug/category/kyambogo-in-media">KYU Media</a></li>
                 </ul>
               </li>
             </ul>
