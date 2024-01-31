@@ -26,61 +26,57 @@
             </div>
           </li>
         </ol>
+        <div class="flex-grow">
+          @livewire('new-role-modal')
+        </div>
       </nav>
     
     {{-- Be like water. main-content --}} 
-    <div class="flex space-x-1" style="padding: 0 10px">
-        @forelse ($roles as $role)
-            <table>
-                <tr>
-                    <td>
-                        <div class="max-w-sm p-4 bg-white border border-gray-200 rounded-lg shadow sm:p-8 dark:bg-gray-800 dark:border-gray-700">
-                            <h5 class="mb-4 text-xl font-medium text-gray-500 dark:text-gray-400">{{$role->name}}</h5>
-                            
-                            <ul role="list" class="space-y-5 my-7">
-                                @forelse($allPermissions as $permission)
-                                    <div class="flex align-items-center {{ $role->permissions->contains($permission) ? '' : 'line-through decoration-gray-500' }}">
-                                        <li class="flex items-center">
-                                            <svg class="flex-shrink-0 w-4 h-4 {{ $role->permissions->contains($permission) ? 'text-blue-600 dark:text-blue-500' : 'text-gray-400 dark:text-gray-500' }}" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
-                                                <path d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5Zm3.707 8.207-4 4a1 1 0 0 1-1.414 0l-2-2a1 1 0 0 1 1.414-1.414L9 10.586l3.293-3.293a1 1 0 0 1 1.414 1.414Z"/>
-                                            </svg>
-                                            <span class="text-base font-normal leading-tight text-gray-500 dark:text-gray-400 ms-3">{{ $permission->name }}</span>
-                                        </li>
-                                    </div> 
-                                @empty
-                                    <p>This role has no Permissions</p>
-                                @endforelse
-
-                                
-                            </ul>
-                            <div class="flex space-x-2">
-                                @livewire('edit-role-modal', ['role' => $role] , key('e'.$role->id) )
-                                
-                                @livewire('delete-role-modal', ['role' => $role], key('d'.$role->id))
-
-                                {{-- @livewire('view-role-details-modal', ['role' => $role], key('v'.$role->id)) --}}
-                                <a href="{{ route('roles.view', ['roleId' => $role->id]) }}" 
-                                    title="Open role details" 
-                                    class="bg-green-600 hover:bg-green-700 focus:ring-4 focus:outline-none focus:ring-green-200 dark:focus:ring-green-900 font-medium rounded-lg text-sm px-5 py-2.5 inline-flex justify-center w-full text-center">
-                                     <svg class="w-6 h-6 text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
-                                         <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M18 14v4.8a1.2 1.2 0 0 1-1.2 1.2H5.2A1.2 1.2 0 0 1 4 18.8V7.2A1.2 1.2 0 0 1 5.2 6h4.6m4.4-2H20v5.8m-7.9 2L20 4.2"/>
-                                     </svg>
-                                 </a>
-                            </div>
-                        </div>
-                    </td>
-                    <td></td>
-                </tr>
-            </table>
+ 
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8  p-4">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols- gap-4 px-4">
+            @forelse ($roles as $role)
+            <div class="p-4 bg-white rounded-lg shadow dark:bg-gray-800 ">
+                <h5 class=" text-xl bg-gray-100 rounded-lg p-4 font-medium text-black-500 dark:text-gray-400">{{$role->name}}</h5>
+                <hr>
+                <ul role="list" class="grid grid-cols-2 gap-4 my-7">
+                    @forelse($allPermissions as $permission)
+                    <div class="flex align-items-center {{ $role->permissions->contains($permission) ? '' : 'line-through decoration-gray-500' }} hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors duration-200">
+                        <li class="flex items-center">
+                            <svg class="flex-shrink-0 w-4 h-4 {{ $role->permissions->contains($permission) ? 'text-blue-600 dark:text-blue-500' : 'text-gray-400 dark:text-gray-500' }}" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
+                                <path d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5Zm3.707 8.207-4 4a1 1 0 0 1-1.414 0l-2-2a1 1 0 0 1 1.414-1.414L9 10.586l3.293-3.293a1 1 0 0 1 1.414 1.414Z"/>
+                            </svg>
+                            <span class="text-base font-normal leading-tight text-gray-500 dark:text-gray-400 ms-3">{{ $permission->name }}</span>
+                        </li>
+                    </div> 
+                        @empty
+                            <p class="text-gray-500">This role has no Permissions</p>
+                        @endforelse
+                    </ul>
     
-        @empty
-            <div>No Roles</div>
-        @endforelse
-    </div>
+                    <div class="flex space-x-2">
+                        <!-- Action buttons here -->
+                        @livewire('edit-role-modal', ['role' => $role] , key('e'.$role->id) )
+                                
+                        @livewire('delete-role-modal', ['role' => $role], key('d'.$role->id))
 
-
-
-
+                        {{-- @livewire('view-role-details-modal', ['role' => $role], key('v'.$role->id)) --}}
+                        <a href="{{ route('roles.view', ['roleId' => $role->id]) }}" 
+                            title="Open role details" 
+                            class="bg-green-600 hover:bg-green-700 focus:ring-4 focus:outline-none focus:ring-green-200 dark:focus:ring-green-900 font-medium rounded-lg text-sm px-5 py-2.5 inline-flex justify-center  text-center">
+                             <svg class="w-6 h-6 text-white dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                                 <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M18 14v4.8a1.2 1.2 0 0 1-1.2 1.2H5.2A1.2 1.2 0 0 1 4 18.8V7.2A1.2 1.2 0 0 1 5.2 6h4.6m4.4-2H20v5.8m-7.9 2L20 4.2"/>
+                             </svg>
+                         </a>
+                    </div>
+                </div>
+            @empty
+                <div class="p-4 bg-white rounded-lg shadow dark:bg-gray-800">
+                    <p class="text-gray-500">No Roles</p>
+                </div>
+            @endforelse
+        </div>
+     </div> 
 
 
 

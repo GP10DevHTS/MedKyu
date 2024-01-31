@@ -38,18 +38,18 @@
       </nav>
     
     {{-- Nothing in the world is as soft and yielding as water. --}}
-    <div class="flex space-x-1" style="padding: 0 10px">
+    <div class="flex space-x-1 pl-4" >
         
 
-        <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
+        <div class="grid grid-cols-2 md:grid-cols-3 gap-4 w-full pr-4">
             <div>
                 <div class="max-w-sm p-4 bg-white border border-gray-200 rounded-lg shadow sm:p-8 dark:bg-gray-800 dark:border-gray-700">
                     <h5 class="mb-4 text-xl flex justify-between font-medium text-gray-500 dark:text-gray-400">
                         <span>{{$role->name}}</span>
                         <span>{{$count}}</span>
                     </h5>
-                    
-                    <ul role="list" class="space-y-5 my-7">
+                    <hr>
+                    <ul role="list" class="space-y-4 py-2">
                         @forelse($allPermissions as $permission)
                             <div class="flex align-items-center {{ $role->permissions->contains($permission) ? '' : 'line-through decoration-gray-500' }}">
                                 <li class="flex items-center">
@@ -67,7 +67,7 @@
                     
                 </div>
             </div>
-            <div class="col-span-2">
+            <div class="col-span-2 w-full">
                 @livewire('role-users-table', ['role' => $role])
             </div>
         </div>
