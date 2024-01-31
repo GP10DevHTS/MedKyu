@@ -3,6 +3,9 @@
 use App\Http\Controllers\loginController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\studentRegistration;
+use App\Livewire\PermisionsList;
+use App\Livewire\RolesList;
+use App\Livewire\ViewRoleDetails;
 
 /*
 |--------------------------------------------------------------------------
@@ -32,6 +35,10 @@ Route::middleware([
     Route::get('/dashboard', function () {
         return view('dashboard');
     })->name('dashboard');
+
+Route::get('roles', RolesList::class )->name('roles.list');
+Route::get('permissions', PermisionsList::class )->name('permissions.list');
+Route::get('roles/view/{roleId}', ViewRoleDetails::class)->name('roles.view');
 });
 
 
