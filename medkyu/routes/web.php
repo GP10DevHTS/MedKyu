@@ -3,9 +3,12 @@
 use App\Http\Controllers\loginController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\studentRegistration;
+use App\Livewire\AllstudentMedCards;
 use App\Livewire\PermisionsList;
 use App\Livewire\RolesList;
 use App\Livewire\ViewRoleDetails;
+use App\Livewire\MedicalCard;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -39,8 +42,12 @@ Route::middleware([
 Route::get('roles', RolesList::class )->name('roles.list');
 Route::get('permissions', PermisionsList::class )->name('permissions.list');
 Route::get('roles/view/{roleId}', ViewRoleDetails::class)->name('roles.view');
-});
 
+//route for medical card
+Route::get('/medical-card', MedicalCard::class)->name('medical-card');
+Route::get('/all-students', AllstudentMedCards::class)->name('all-students');
+
+});
 
 
 
