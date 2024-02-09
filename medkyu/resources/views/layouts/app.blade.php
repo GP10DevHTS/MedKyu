@@ -16,6 +16,8 @@
 
         <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.2.1/flowbite.min.css"  rel="stylesheet" />
         <link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet">
+        <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
         <!-- Styles -->
         @livewireStyles
     </head>
@@ -127,6 +129,17 @@
         @stack('modals')
 
         @livewireScripts
+
+        <script>
+            window.addEventListener('alert', event => {
+                // alert(event.detail.message);
+                Swal.fire({
+                    title: event.detail[0].title,
+                    text: event.detail[0].message,
+                    icon: event.detail[0].icon,
+                });
+            });
+        </script>
 
     </body>
 </html>

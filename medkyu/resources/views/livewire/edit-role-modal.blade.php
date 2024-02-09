@@ -1,4 +1,4 @@
-<div>
+<div wire:poll>
     {{-- If your happiness depends on money, you will never be happy with yourself. --}}
     <x-button title="edit this role" wire:click="openModal({{ $role }})" class="bg-blue-600 hover:bg-blue-700 focus:ring-4 focus:outline-none focus:ring-blue-200 dark:focus:ring-blue-900 font-medium rounded-lg text-sm px-5 py-2.5 inline-flex justify-center w-full text-center">
         <svg class="w-6 h-6 text-white dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
@@ -25,10 +25,10 @@
 
         </x-slot>
         <x-slot name="footer">
-            <x-button disabled title="still under development" wire:click="grantAll('{{$role->id}}')" class="bg-green-400 hover:bg-green-500" wire:click="closeModal">
+            <x-button wire:click="grantAllPerms({{$role->id}})" class="bg-green-400 hover:bg-green-500">
                 Grant All
             </x-button>
-            <x-danger-button disabled title="still under development" wire:click="revokeAll('{{$role->id}}')" class="ml-2 mr-2" wire:click="closeModal">
+            <x-danger-button wire:click="revokeAllPerms('{{$role->id}}')" class="ml-2 mr-2">
                 Revoke All
             </x-danger-button>
             <x-button title="close this page" wire:click="closeModal">

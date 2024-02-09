@@ -13,15 +13,16 @@
         </x-slot>
         <x-slot name="content">
             <p class="text-red-600 font-bold">Warning: Deleting this role will have irreversible consequences. This action cannot be undone.</p>
-            <p class="text-red-600 font-bold">Please confirm with App Key</p>
+            <p class="text-red-600 font-bold">Please confirm with current password</p>
             <input type="password" wire:model="password" placeholder="Enter your password" class="mt-2 p-2 border border-gray-300 rounded-md w-full focus:outline-none focus:ring focus:border-blue-300 dark:bg-gray-800 dark:text-white">
+            <x-input-error for="password" class="mt-2" />
         </x-slot>
         <x-slot name="footer">
             <x-secondary-button wire:click='closeModal' wire:loading.attr="disabled">
                 Nevermind
             </x-secondary-button>
             <x-button mode="delete" wire:click="deleteRole" wire:loading.attr="disabled">
-                Delete
+                Delete 
             </x-button>
         </x-slot>
     </x-dialog-modal>

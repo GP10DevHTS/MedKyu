@@ -3,6 +3,7 @@
 namespace App\Livewire;
 
 use Livewire\Component;
+use Illuminate\Support\Facades\DB;  
 use Spatie\Permission\Models\Role;
 use Spatie\Permission\Models\Permission;
 
@@ -30,11 +31,18 @@ class EditRoleModal extends Component
         }
 
         $this->role->load('permissions');
+
+        
     }
     public function render()
     {
+        app()[\Spatie\Permission\PermissionRegistrar::class]->forgetCachedPermissions();
 
-        return view('livewire.edit-role-modal');
+        $this->role->load('permissions');
+        return view('livewire.edit-role-modal',[
+            // 'allPermissions' => $this->allPermissions,
+            // 'role' => $this->role
+        ]);
     }
     
     public function closeModal()
@@ -48,25 +56,32 @@ class EditRoleModal extends Component
         $this->isModalOpen = true;
     }
 
-    public function revokeAll($roleId)
+    public function revokeAllPerms($roleId)
     {
         $role = Role::find($roleId);
-        $role->revokePermissionTo($role->permissions);
-
+        // dd($role->id, $roleId);
+        DB::delete('delete from role_has_permissions where role_id = ?', [$role->id]);
         $this->role->load('permissions');
+        $this->closeModal();
+        $this->dispatch('alert' , [
+            'title' => 'success',
+            'message' => 'All permissions revoked successfully.',
+            'icon' => 'success'
+        ]);
     }
 
-    public function grantAll($roleId)
+    public function grantAllPerms($roleId)
     {
-        // dd($roleId);
-        // return;
         $role = Role::find($roleId);
-        $permissions = Permission::all();
-        
-        foreach ($permissions as $permission) {
-            $role->givePermissionTo($permission);
-        }
-
+        $role->syncPermissions(Permission::all());
         $this->role->load('permissions');
+        $this->closeModal();
+        $this->dispatch('alert' , [
+            'title' => 'success',
+            'message' => 'All permissions granted successfully.',
+            'icon' => 'success'
+        ]);
     }
+
+   
 }
