@@ -68,6 +68,7 @@ class EditRoleModal extends Component
             'message' => 'All permissions revoked successfully.',
             'icon' => 'success'
         ]);
+        redirect()->route('roles.list');
     }
 
     public function grantAllPerms($roleId)
@@ -81,6 +82,7 @@ class EditRoleModal extends Component
             'message' => 'All permissions granted successfully.',
             'icon' => 'success'
         ]);
+        redirect()->route('roles.list');
     }
 
    
