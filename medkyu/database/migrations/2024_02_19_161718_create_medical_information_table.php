@@ -15,11 +15,13 @@ return new class extends Migration
             $table->id();
             $table->unsignedBigInteger('student_id');
             $table->string('blood_type')->nullable();
+            $table->string('height')->nullable();
+            $table->string('weight')->nullable();
             $table->string('medical_history');
             $table->string('allergies')->nullable();
             $table->string('current_medications')->nullable();
             $table->string('special_needs')->nullable();
-            $table->string('chromical_illnesses')->nullable();
+            $table->string('chronical_illnesses')->nullable();
             $table->timestamps();
             $table->foreign('student_id')->references('id')->on('users')->onDelete('cascade')->onUpdate('cascade');
 

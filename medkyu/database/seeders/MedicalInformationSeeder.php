@@ -25,7 +25,7 @@ class MedicalInformationSeeder extends Seeder
                 'allergies' => 'Allergies for Student ' . $studentId,
                 'current_medications' => 'Current Medications for Student ' . $studentId,
                 'special_needs' => 'Special Needs for Student ' . $studentId,
-                'chromical_illnesses' => 'Chromical Illnesses for Student ' . $studentId,
+                'chronical_illnesses' => 'Chromical Illnesses for Student ' . $studentId,
                 'created_at' => now(),
                 'updated_at' => now(),
             ]);
