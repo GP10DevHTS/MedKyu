@@ -19,22 +19,23 @@ class permissionsAndRolesSeeder extends Seeder
         // Reset cached roles and permissions
         app()[\Spatie\Permission\PermissionRegistrar::class]->forgetCachedPermissions();
         // create roles
-        $role1 = Role::create(['name' => 'student1']);
-        $role2 = Role::create(['name' => 'gen-staff1']);
-        $role3 = Role::create(['name' => 'medical-staff1']);
-        $role4 = Role::create(['name' => 'admin1']);
+        $role1 = Role::create(['name' => 'student']);
+        $role2 = Role::create(['name' => 'doctor']);
+        $role3 = Role::create(['name' => 'admin']);
+        // $role4 = Role::create(['name' => 'admin1']);
+        
 
         // create permissions
         $permission1 = Permission::create(['name' => 'login1']);
         $permission2 = Permission::create(['name' => 'view medical records1']);
-        $permission3 = Permission::create(['name' => 'create medical records1']);
+        // $permission3 = Permission::create(['name' => 'create medical records1']);
 
         $role1->givePermissionTo($permission1);
         $role2->givePermissionTo($permission1);
         $role3->givePermissionTo($permission1);
-        $role4->givePermissionTo($permission1);
+        // $role4->givePermissionTo($permission1);
 
-        $role4->givePermissionTo($permission2);
+        // $role4->givePermissionTo($permission2);
         $role3->givePermissionTo($permission2);
     }
 }
