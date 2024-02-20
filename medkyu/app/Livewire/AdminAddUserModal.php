@@ -11,7 +11,7 @@ class AdminAddUserModal extends Component
 {
     public $isModalOpen = false;
 
-    public $roles;
+    // public $roles;
 
     public $name;
     public $email;
@@ -26,7 +26,7 @@ class AdminAddUserModal extends Component
     ];
     public function mount()
     {
-        $this->roles = Role::all();
+        // $this->roles = Role::all();
         // dd($this->roles);
     }
 
@@ -40,7 +40,12 @@ class AdminAddUserModal extends Component
             'role' => $this->role
 
         ]);
-        $user->assignRole($this->roles);
+        $r = Role::
+        find($this->role);
+
+        // dd($r->name);
+        $user->assignRole($r->name);
+        // $user->assignRole($this->role);
 
         // dd($user);
         $this->isModalOpen = false;
@@ -52,7 +57,9 @@ class AdminAddUserModal extends Component
         
     public function render()
     {
-        return view('livewire.admin-add-user-modal');
+        return view('livewire.admin-add-user-modal', [
+            'roles' => Role::all(),
+        ]);
     }
 
     public function openCreateModal()
