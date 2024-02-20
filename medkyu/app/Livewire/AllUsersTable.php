@@ -9,7 +9,6 @@ class AllUsersTable extends Component
 {
     public function render()
     {
-        //write a query to get all users from the users, roles, Emergency Contacts tables
         $users = User::with('roles')
             ->get();
 
