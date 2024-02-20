@@ -17,9 +17,10 @@ class EmergencyContact extends Model
        'contact_email',
     ];
 
-    public function user()
+    public function student()
     {
-        return $this->belongsTo(User::class);
+        return $this->belongsTo(User::class, 'student_id');
     }
+    
 
 }

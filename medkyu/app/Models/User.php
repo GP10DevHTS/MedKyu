@@ -11,6 +11,10 @@ use Laravel\Jetstream\HasProfilePhoto;
 use Laravel\Sanctum\HasApiTokens;
 use Spatie\Permission\Traits\HasRoles;
 
+use App\Models\EmergencyContact;
+
+
+
 class User extends Authenticatable
 {
     use HasApiTokens;
@@ -61,5 +65,13 @@ class User extends Authenticatable
         'profile_photo_url',
     ];
 
+    public function emergency_contacts(){
+        return $this->hasMany(EmergencyContact::class, 'student_id');
+    }
+
+    public function student()
+    {
+        return $this->belongsTo(User::class, 'student_id');
+    }
     
 }

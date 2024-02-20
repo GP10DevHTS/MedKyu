@@ -3,11 +3,17 @@
 namespace App\Livewire;
 
 use Livewire\Component;
+use App\Models\User;
 
 class AllUsersTable extends Component
 {
     public function render()
     {
-        return view('livewire.all-users-table');
+        //write a query to get all users from the users, roles, Emergency Contacts tables
+        $users = User::with('roles')
+            ->get();
+
+        // dd($users);
+        return view('livewire.all-users-table', ['users' => $users]);
     }
 }

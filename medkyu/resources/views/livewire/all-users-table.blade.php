@@ -24,7 +24,7 @@
                             <svg class="h-3.5 w-3.5 mr-2" fill="currentColor" viewbox="0 0 20 20" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
                                 <path clip-rule="evenodd" fill-rule="evenodd" d="M10 3a1 1 0 011 1v5h5a1 1 0 110 2h-5v5a1 1 0 11-2 0v-5H4a1 1 0 110-2h5V4a1 1 0 011-1z" />
                             </svg>
-                            Add product
+                            Add User
                         </x-button>
                         <div class="flex items-center space-x-3 w-full md:w-auto">
                            
@@ -49,23 +49,58 @@
                         </div>
                     </div>
                 </div>
-                <div class="overflow-x-auto">
+                <div class="w-full">
                     <table class="w-full text-sm text-left text-gray-500 dark:text-gray-400">
                         <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
-                            <tr>
+                            <tr class="border-b dark:border-gray-700 w-full" >
                                <th scope="col" class="px-4 py-3">User Details</th>
-                                <th scope="col" class="px-4 py-3">Role</th>
-                                {{-- <th scope="col" class="px-4 py-3">Company</th> --}}
-                                <th scope="col" class="px-4 py-3">Emergency Details</th>
-                                <th scope="col" class="px-4 py-3">Relationship</th>
-                                <th scope="col" class="px-4 py-3">Emergency Contact</th>
-                                {{-- <th scope="col" class="px-4 py-3">Price</th> --}}
-                                <th scope="col " class="text-right px-24  flex items-center py-3">Action</th>
+                                <th scope="col" class="px-4 py-3">Roles</th>
+                                <th scope="col" class="px-4 py-3">Joined Date</th>
+                                <th scope="col" class="px-4 py-3">updated At</th>
+                                <th scope="col " class="text-right px-24   py-3">Action</th>
                             </tr>
                         </thead>
                         <tbody>
+                            @forelse ($users as $user)
                             <tr class="border-b dark:border-gray-700">
-                                <td scope="row" class="px-4 py-3 font-medium text-gray-900 whitespace-nowrap dark:text-white">Apple iMac 27&#34;</td>
+                                
+                                <td class="px-4 py-3 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                                    <div class="flex items-center">
+                                    <img class="w-10 h-10 rounded-full" src="https://flowbite.com/docs/images/people/profile-picture-5.jpg" alt="Jese image">
+                                    {{$user->name}}
+                                    </div>
+                                    {{$user->email}}
+                                </td>
+                                <td class="px-4 py-3 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                                    {{-- display roles --}}
+                                    @forelse ($user->roles as $role)
+                                        <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-blue-100 text-blue-800 dark:bg-blue-800 dark:text-blue-100">
+                                            {{$role->name}}
+                                        </span>
+                                    @empty
+                                        <span class="text-gray-500">No roles</span>
+                                    @endforelse
+                                </td>
+                                <td class="px-4 py-3 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                                    {{-- display created_at --}}
+                                    {{$user->created_at}}
+                                </td>
+                                <td class="px-4 py-3 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                                    {{-- display updated_at --}}
+                                    {{$user->updated_at}}
+                                </td>
+
+                                
+                                <td class="px-4 py-3 flex items-center justify-end">
+                                    <a href="#" class="block py-2 px-4 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white">Edit</a>
+                                    <a href="#" class="block py-2 px-4 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white">Show</a>
+                                    <a href="#" class="block py-2 px-4 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white">Delete</a>
+                                </td>
+                                    
+                                @empty
+                                    
+                                @endforelse
+                                {{-- <td scope="row" class="px-4 py-3 font-medium text-gray-900 whitespace-nowrap dark:text-white">Apple iMac 27&#34;</td>
                                 <td class="px-4 py-3">PC</td>
                                 <td class="px-4 py-3">Apple</td>
                                 <td class="px-4 py-3">300</td>
@@ -74,7 +109,7 @@
                                     <a href="#" class="block py-2 px-4 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white">Edit</a>
                                     <a href="#" class="block py-2 px-4 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white">Show</a>
                                     <a href="#" class="block py-2 px-4 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white">Delete</a>
-                                </td>
+                                </td> --}}
                             </tr>
                             
                         </tbody>
