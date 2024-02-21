@@ -9,10 +9,8 @@ class AllUsersTable extends Component
 {
     public function render()
     {
-        $users = User::with('roles')
-            ->get();
-
-        // dd($users);
+        
+        $users = User::with('roles')->get();
         return view('livewire.all-users-table', ['users' => $users]);
     }
 }

@@ -9,7 +9,7 @@ use App\Livewire\PermisionsList;
 use App\Livewire\RolesList;
 use App\Livewire\ViewRoleDetails;
 use App\Livewire\MedicalCard;
-
+use App\Livewire\ShowUsersDetails;
 
 /*
 |--------------------------------------------------------------------------

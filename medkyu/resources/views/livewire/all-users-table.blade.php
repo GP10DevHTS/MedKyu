@@ -60,11 +60,12 @@
                             <tr class="border-b dark:border-gray-700">
                                 
                                 <td class="px-4 py-3 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                                    <div class="flex items-center">
+                                    <div class="flex items-center ">
                                     <img class="w-10 h-10 rounded-full" src="{{$user->profile_photo_url}}" alt="">
-                                    {{$user->name}}
-                                    </div>
+                                    {{$user->name}}<br>
                                     {{$user->email}}
+                                    </div>
+                                    
                                 </td>
                                 <td class="px-4 py-3 font-medium text-gray-900 whitespace-nowrap dark:text-white">
                                     {{-- display roles --}}
@@ -90,25 +91,19 @@
                                 </td>
 
                                 
-                                <td class="px-4 py-3 flex items-center justify-end">
-                                    <a href="#" class="block py-2 px-4 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white">Edit</a>
-                                    <a href="#" class="block py-2 px-4 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white">Show</a>
-                                    <a href="#" class="block py-2 px-4 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white">Delete</a>
+                                <td class="px-4 py-3 flex items-center justify-start w-full space-x-2">
+                                    @livewire('users-details-card', ['user' => $user], key(uniqid()))
+                                    <x-button wire:click="delete({{$user->id}})" class="py-2 px-4 text-sm text-white hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white">Delete</x-button>
+                                    
                                 </td>
                                     
                                 @empty
+                                    <td class="px-4 py-3 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                                        <span class="text-gray-500">No users</span>
+                                    </td>
                                     
                                 @endforelse
-                                {{-- <td scope="row" class="px-4 py-3 font-medium text-gray-900 whitespace-nowrap dark:text-white">Apple iMac 27&#34;</td>
-                                <td class="px-4 py-3">PC</td>
-                                <td class="px-4 py-3">Apple</td>
-                                <td class="px-4 py-3">300</td>
-                                <td class="px-4 py-3">$2999</td>
-                                <td class="px-4 py-3 flex items-center justify-end">
-                                    <a href="#" class="block py-2 px-4 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white">Edit</a>
-                                    <a href="#" class="block py-2 px-4 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white">Show</a>
-                                    <a href="#" class="block py-2 px-4 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white">Delete</a>
-                                </td> --}}
+                               
                             </tr>
                             
                         </tbody>
