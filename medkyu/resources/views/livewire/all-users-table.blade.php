@@ -93,7 +93,7 @@
                                 
                                 <td class="px-4 py-3 flex items-center justify-start w-full space-x-2">
                                     @livewire('users-details-card', ['user' => $user], key(uniqid()))
-                                    <x-button wire:click="delete({{$user->id}})" class="py-2 px-4 text-sm text-white hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white">Delete</x-button>
+                                    <x-button wire:click="deleteUser({{$user->id}})" class="py-2 px-4 text-sm text-white hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white">Delete</x-button>
                                     
                                 </td>
                                     

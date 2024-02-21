@@ -23,6 +23,7 @@
                                         <p><span class="font-bold">Contact Email:</span> {{ $emergency_contact->contact_email }}</p>
                                     @endif
                                 @endforeach
+                                <x-button wire:click="editEmergencyContacts({{ $user->id }})" class="py-2 px-4 text-sm text-white hover:bg-gray-100 dark:hover: dark:text-gray-200 dark:hover:text-white">Edit</x-button>
                             </div>
                     @endif  
                 
@@ -38,6 +39,8 @@
                                         <p class="mb-1 space-x-2"><span class="font-bold">Policy Number:</span> {{ $insurance_information->policy_number }}</p>
                                         <p class="mb-1 space-x-2"><span class="font-bold">Coverage Details:</span> {{ $insurance_information->coverage_details }}</p>
                                     @endforeach
+
+                                    @livewire('admin-edit-insurance-modal')
                                 </div>
                         @endif  
                     </div>

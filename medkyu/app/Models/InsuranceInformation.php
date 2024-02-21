@@ -10,7 +10,7 @@ class InsuranceInformation extends Model
     use HasFactory;
 
     protected $fillable = [
-        'student_id',
+        // 'student_id',
         'insurance_name',
         'insurance_number',
         'insurance_provider',
