@@ -73,5 +73,13 @@ class User extends Authenticatable
     {
         return $this->belongsTo(User::class, 'student_id');
     }
+    public function insurance_information()
+    {
+        return $this->hasMany(InsuranceInformation::class, 'student_id');
+    }
+    public function insurance_informations()
+    {
+        return $this->hasMany(InsuranceInformation::class, 'student_id');
+    }
     
 }

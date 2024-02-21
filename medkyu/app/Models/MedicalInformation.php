@@ -19,4 +19,14 @@ class MedicalInformation extends Model
         'special_needs',
         'chronical_illnesses',
     ];
+
+    public function student()
+    {
+        return $this->belongsTo(User::class, 'student_id');
+    }
+
+    public function insurance_informations()
+    {
+        return $this->hasMany(InsuranceInformation::class, 'student_id');
+    }
 }

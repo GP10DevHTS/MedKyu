@@ -7,13 +7,13 @@
         </x-slot>
 
         <x-slot name="content">
-            <div class="w-full bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
+            <div class="w-full bg-white ">
                 <div class="flex flex-col items-center pb-10">
                     <img class="w-24 h-24 mb-3 rounded-full shadow-lg" src="{{ $user->profile_photo_url }}" alt="Bonnie image"/>
                     <h5 class="mb-1 text-xl font-medium text-gray-900 dark:text-white">Emergency Contacts</h5>
                     @if ($user->emergency_contacts)
                     {{-- @dd($user->emergency_contacts) --}}
-                            <div class="text-sm text-gray-500 dark:text-gray-400 w-full border border-gray-600 p-3 space-y-2">
+                            <div class="text-sm text-gray-500 dark:text-gray-400 w-full border border-gray-600 p-3 space-y-2 rounded">
                                 @foreach ($user->emergency_contacts as $emergency_contact)
                                     <p class="mb-1 space-x-2"><span class="font-bold">Name:</span> {{ $emergency_contact->contact_name }}</p>
                                     <p class="mb-1 space-x-2"><span class="font-bold">Relationship:</span> {{ $emergency_contact->relationship }}</p>
@@ -22,15 +22,30 @@
                                     @if ($emergency_contact->contact_email)
                                         <p><span class="font-bold">Contact Email:</span> {{ $emergency_contact->contact_email }}</p>
                                     @endif
-                                
-                                    
                                 @endforeach
                             </div>
-
-                    @endif
-                    
-                </div>
+                    @endif  
+                
+                    {{-- <div class=" flex flex-col items-center pb-10 w-full  "> --}}
+                        <h5 class="mb-1 text-xl font-medium text-gray-900 dark:text-white">Insurance Information</h5>
+                        @if ($user->emergency_contacts)
+                        {{-- @dd($user->emergency_contacts) --}}
+                                <div class="text-sm text-gray-500 dark:text-gray-400 w-full border border-gray-600 p-3 space-y-2">
+                                    @foreach ($user->insurance_information as $insurance_information)
+                                        <p class="mb-1 space-x-2"><span class="font-bold">Insurance Name:</span> {{ $insurance_information->insurance_name }}</p>
+                                        <p class="mb-1 space-x-2"><span class="font-bold">Insurance Number:</span> {{ $insurance_information->insurance_number }}</p>
+                                        <p class="mb-1 space-x-2"><span class="font-bold">Insurance Provider:</span> {{ $insurance_information->insurance_provider }}</p>
+                                        <p class="mb-1 space-x-2"><span class="font-bold">Policy Number:</span> {{ $insurance_information->policy_number }}</p>
+                                        <p class="mb-1 space-x-2"><span class="font-bold">Coverage Details:</span> {{ $insurance_information->coverage_details }}</p>
+                                    @endforeach
+                                </div>
+                        @endif  
+                    </div>
+                {{-- <div class="px-6 pt-4 pb-2">
+                    <span class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">{{ $user->insurance_information }}</span>
+                </div> --}}
             </div>
+            {{-- </div> --}}
             
         </x-slot>
 
