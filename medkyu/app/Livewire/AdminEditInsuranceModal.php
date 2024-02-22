@@ -48,6 +48,5 @@ class AdminEditInsuranceModal extends Component
     }
 
     
-
     
 }

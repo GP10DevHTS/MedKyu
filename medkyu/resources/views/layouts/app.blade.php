@@ -20,6 +20,7 @@
 
         <!-- Styles -->
         @livewireStyles
+
     </head>
     <body class="font-sans ">
         <x-banner />
@@ -37,10 +38,10 @@
                          <path clip-rule="evenodd" fill-rule="evenodd" d="M2 4.75A.75.75 0 012.75 4h14.5a.75.75 0 010 1.5H2.75A.75.75 0 012 4.75zm0 10.5a.75.75 0 01.75-.75h7.5a.75.75 0 010 1.5h-7.5a.75.75 0 01-.75-.75zM2 10a.75.75 0 01.75-.75h14.5a.75.75 0 010 1.5H2.75A.75.75 0 012 10z"></path>
                       </svg>
                    </button>
-                  <a href="{{route('home')}}" class="flex ms-2 md:me-24">
-                    {{-- <img src="https://flowbite.com/docs/images/logo.svg" class="h-8 me-3" alt="FlowBite Logo" /> --}}
-                    <span class="self-center text-xl font-semibold sm:text-2xl whitespace-nowrap">{{ config('app.name', 'Medyu') }}</span>
+                  <a href="{{route('home')}}" class=" ms-2 md:me-24">
+                    <x-application-logo class="w-25 h-9  fill-current text-gray-800 dark:text-gray-200" />
                   </a>
+                  
                 </div>
                 <div class="flex items-center">
                     <div class="flex items-center ms-3">
@@ -59,7 +60,7 @@
                                 @else
                                     <span class="inline-flex rounded-md">
                                         <button type="button" class="inline-flex items-center px-3 py-2 border border-transparent text-sm leading-4 font-medium rounded-md text-gray-500 dark:text-gray-400 bg-white dark:bg-gray-800 hover:text-gray-700 dark:hover:text-gray-300 focus:outline-none focus:bg-gray-50 dark:focus:bg-gray-700 active:bg-gray-50 dark:active:bg-gray-700 transition ease-in-out duration-150">
-                                            {{ Auth::user()->name }}
+                                             {{ Auth::user()->name }}
 
                                             <svg class="ms-2 -me-0.5 h-4 w-4" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
                                                 <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
@@ -139,6 +140,8 @@
                     icon: event.detail[0].icon,
                 });
             });
+
+    </script>
         </script>
 
     </body>

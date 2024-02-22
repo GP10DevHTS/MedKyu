@@ -4,6 +4,7 @@ use App\Http\Controllers\loginController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\studentRegistration;
 use App\Livewire\AllstudentMedCards;
+use App\Livewire\AllStudentsMedHistoryComponent;
 use App\Livewire\AllUsersComponent;
 use App\Livewire\PermisionsList;
 use App\Livewire\RolesList;
@@ -50,6 +51,7 @@ Route::get('/all-students', AllstudentMedCards::class)->name('all-students');
 
 //admin
 Route::get('/users', AllUsersComponent::class)->name('users');
+Route::get('/users/medical_History', AllStudentsMedHistoryComponent::class)->name('users.medical_history');
 }); 
 
 
