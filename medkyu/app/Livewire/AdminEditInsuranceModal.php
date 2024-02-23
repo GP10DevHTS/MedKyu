@@ -38,7 +38,7 @@ class AdminEditInsuranceModal extends Component
             'policy_number' => $this->policyNumber,
             'coverage_details' => $this->coverageDetails,
         ]);
-        dd($this->insuranceInformation);
+        // dd($this->insuranceInformation);
         $this->showEditInsuranceModal = false;
     }
 

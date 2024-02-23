@@ -9,7 +9,7 @@ class MedicalInformation extends Model
 {
     use HasFactory;
     protected $fillable = [
-        'student_id',
+        // 'student_id', 
         'blood_type',
         'height',
         'weight',

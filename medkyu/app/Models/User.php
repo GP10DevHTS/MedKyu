@@ -81,5 +81,9 @@ class User extends Authenticatable
     {
         return $this->hasMany(InsuranceInformation::class, 'student_id');
     }
+    public function medical_history()
+    {
+        return $this->hasMany(MedicalInformation::class, 'student_id');
+    }
     
 }
