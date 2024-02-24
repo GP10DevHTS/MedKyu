@@ -40,6 +40,6 @@
                     @livewire('all-students-med-history-table')
                 </div>
             </div>
-        {{-- </div> --}}
+        </div>
     </div>
 </div>
