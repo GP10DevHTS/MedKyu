@@ -2,14 +2,9 @@
     {{-- The whole world belongs to you. --}}
     {{-- <div> --}}
 
-
-
-
-
-
         {{-- The Master doesn't talk, he acts. --}}
         <section class="">
-            <div class="mx-auto max-w-screen-xl px-4 py-8 ">
+            <div class="mx-auto max-w-screen-xl px-1 py-5 ">
                 <!-- Start coding here -->
                 <div class="bg-white dark:bg-gray-800 relative shadow-lg sm:rounded-lg overflow-hidden">
                     <div class="flex flex-col md:flex-row items-center justify-between space-y-3 md:space-y-0 md:space-x-4 p-4">
