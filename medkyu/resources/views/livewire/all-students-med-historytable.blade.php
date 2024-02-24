@@ -1,11 +1,17 @@
-<div>
+<div >
     {{-- The whole world belongs to you. --}}
-    <div>
+    {{-- <div> --}}
+
+
+
+
+
+
         {{-- The Master doesn't talk, he acts. --}}
-        <section class="bg-gray-50 dark:bg-gray-900 py-8">
-            <div class="mx-auto max-w-screen-xl px-4 lg:px-12">
+        <section class="">
+            <div class="mx-auto max-w-screen-xl px-4 py-8 ">
                 <!-- Start coding here -->
-                <div class="bg-white dark:bg-gray-800 relative shadow-md sm:rounded-lg overflow-hidden">
+                <div class="bg-white dark:bg-gray-800 relative shadow-lg sm:rounded-lg overflow-hidden">
                     <div class="flex flex-col md:flex-row items-center justify-between space-y-3 md:space-y-0 md:space-x-4 p-4">
                         <div class="w-full md:w-1/2">
                             <form class="flex items-center">
@@ -87,7 +93,7 @@
                                         {{-- <x-button wire:click="editHistory({{$history->id}})" class="py-2 px-4 text-sm text-white hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white">Edit</x-button> --}}
                                         {{-- <x-button wire:click="viewHistory()" class="py-2 px-4 text-sm text-white hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white ml-2">More</x-button> --}}
                                         {{-- create a livewire compoonent for openning modal for checking for more info --}}
-                                        @livewire('admin-view-med-history-modal', key(uniqid()))
+                                        @livewire('admin-view-med-history-modal')
                                     </td>
 
                                 </tr>
@@ -102,6 +108,6 @@
                 </div>
             </div>
             </section>
-    </div>
+    {{-- </div> --}}
     
 </div>

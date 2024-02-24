@@ -1,6 +1,6 @@
-{{-- <div>
-    A good traveler has no fixed plans and is not intent upon arriving.
-</div> --}}
+
+    {{-- A good traveler has no fixed plans and is not intent upon arriving. --}}
+{{-- </div>  --}}
 <tr id="table-row-{{$permission->id}}" class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
     <td class="w-4 p-4">
         <div class="flex items-center">

@@ -8,9 +8,26 @@
         </x-slot>
 
         <x-slot name="content">
-            <div>
-                other med
-            </div>
+            <div class="container mx-auto px-4 lg:px-8">
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+                    <!-- Livewire loop to display medical history -->
+                    {{-- @foreach($medicalHistory as $history)
+                    <div class="bg-white dark:bg-gray-800 shadow-md rounded-lg overflow-hidden">
+                        <div class="p-6">
+                            <h2 class="text-xl font-semibold text-gray-800 dark:text-gray-200 mb-2">{{ $history->patient_details }}</h2>
+                            <p class="text-gray-600 dark:text-gray-400 mb-4">{{ $history->blood_type }}</p>
+                            <p class="text-gray-600 dark:text-gray-400 mb-4">{{ $history->allergies }}</p>
+                            <p class="text-gray-600 dark:text-gray-400 mb-4">{{ $history->special_needs }}</p>
+                            <p class="text-gray-600 dark:text-gray-400 mb-4">{{ $history->created_at }}</p>
+                            <!-- Action buttons here -->
+                            <div class="flex justify-end">
+                                <!-- Action buttons can be placed here -->
+                            </div>
+                        </div>
+                    </div>
+                    @endforeach --}}
+                </div>
+            {{-- </div> --}}
         </x-slot>
         <x-slot name="footer">
             <x-button wire:click="closeMoreModal()" title="Cancel">

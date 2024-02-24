@@ -1,4 +1,4 @@
-<div class="bg-blue-50 pb-5" wire:poll>
+<div class=" pb-5" wire:poll>
     <nav class="flex mb-4 bg-blue-100 p-3" aria-label="Breadcrumb">
         <ol class="inline-flex items-center space-x-1 md:space-x-2 rtl:space-x-reverse">
           <li class="inline-flex items-center">

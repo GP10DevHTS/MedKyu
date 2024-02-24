@@ -1,4 +1,4 @@
-<div class="bg-blue-50 pb-5">
+<div class=" pb-5">
 
     {{-- Do your work, then step back. --}}
 

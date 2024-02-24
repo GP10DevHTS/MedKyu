@@ -10,13 +10,13 @@ class AdminViewMedHistoryModal extends Component
 {
     public $viewMoreModal = false;
     public $medicalHistory;
-    public function mount(){
-        //pick the selected user 
-        // $user = User::find($this->selectedUserId);
-        // $this->medicalHistory = MedicalInformation::where('student_id', $user->id)->get();
-        // dd($this->medicalHistory);
+    public $userId;
+    // public function mount($userId){
+    //     $this->userId = $userId;
+    //     $this->medicalHistory = MedicalInformation::where('student_id', $this->userId)->get();
+       
 
-       }
+    //    }
     public function render()
     {
         return view('livewire.admin-view-med-history-modal');

@@ -1,9 +1,9 @@
 <div>
-    {{-- The Master doesn't talk, he acts. --}}
+    {{-- Success is as dangerous as failure. --}}
     <section class="">
-        <div class="mx-auto max-w-screen-xl px-4 py-8 lg:px-12">
+        <div class="mx-auto max-w-screen-xl px-1 py-5">
             <!-- Start coding here -->
-            <div class="bg-white dark:bg-gray-800 relative shadow-md sm:rounded-lg overflow-hidden">
+            <div class="bg-white dark:bg-gray-800 relative shadow-lg sm:rounded-lg overflow-hidden">
                 <div class="flex flex-col md:flex-row items-center justify-between space-y-3 md:space-y-0 md:space-x-4 p-4">
                     <div class="w-full md:w-1/2">
                         <form class="flex items-center">
@@ -20,7 +20,7 @@
                     </div>
                     <div class="w-full md:w-auto flex flex-col md:flex-row space-y-2 md:space-y-0 items-stretch md:items-center justify-end md:space-x-3 flex-shrink-0">
                         
-                        @livewire('admin-add-user-modal')
+                        {{-- @livewire('admin-add-user-modal') --}}
                         <div class="flex items-center space-x-3 w-full md:w-auto">
                            
                             <button id="filterDropdownButton" data-dropdown-toggle="filterDropdown" class="w-full md:w-auto flex items-center justify-center py-2 px-4 text-sm font-medium text-gray-900 focus:outline-none bg-white rounded-lg border border-gray-200 hover:bg-gray-100 hover:text-primary-700 focus:z-10 focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700" type="button">
@@ -44,67 +44,32 @@
                         </div>
                     </div>
                 </div>
-                <div class="w-full">
+                <div class="w-full px-2 py-3">
                     <table class="w-full text-sm text-left text-gray-500 dark:text-gray-400">
                         <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
                             <tr class="border-b dark:border-gray-700 w-full" >
-                               <th scope="col" class="px-4 py-3">User Details</th>
-                                <th scope="col" class="px-4 py-3">Roles</th>
-                                <th scope="col" class="px-4 py-3">Joined Date</th>
-                                <th scope="col" class="px-4 py-3">updated At</th>
+                               <th scope="col" class="px-4 py-3">Doctor Details</th>
+                                {{-- <th scope="col" class="px-4 py-3">Blood Type</th> --}}
+                                {{-- <th scope="col" class="px-4 py-3">Height</th>
+                                <th scope="col" class="px-4 py-3">Weight</th> --}}
+                                {{-- <th scope="col" class="px-4 py-3">Med History</th> --}}
+                                <th scope="col" class="px-4 py-3">Days Available</th>
+                                {{-- <th scope="col" class="px-4 py-3">current_medications</th> --}}
+                                <th scope="col" class="px-4 py-3">Time Available</th>
+                                <th scope="col" class="px-4 py-3">Created At</th>
                                 <th scope="col " class="text-right px-24   py-3">Action</th>
                             </tr>
                         </thead>
                         <tbody>
-                            @forelse ($users as $user)
-                            <tr class="border-b dark:border-gray-700">
-                                
-                                <td class="px-4 py-3 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                                    <div class="flex items-center ">
-                                    <img class="w-10 h-10 rounded-full" src="{{$user->profile_photo_url}}" alt="">
-                                    {{$user->name}}<br>
-                                    {{$user->email}}
-                                    </div>
-                                    
-                                </td>
-                                <td class="px-4 py-3 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                                    {{-- display roles --}}
-                                    @if ($user->roles)
-                                        @forelse ($user->roles as $role)
-                                        <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-blue-100 text-blue-800 dark:bg-blue-800 dark:text-blue-100">
-                                            {{$role->name}}
-                                        </span>
-                                    @empty
-                                        <span class="text-gray-500">No roles</span>
-                                    @endforelse
-                                    @else
-                                        <span class="text-gray-500">No roles</span>
-                                    @endif
-                                </td>
-                                <td class="px-4 py-3 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                                    {{-- display created_at --}}
-                                    {{$user->created_at}}
-                                </td>
-                                <td class="px-4 py-3 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                                    {{-- display updated_at --}}
-                                    {{$user->updated_at}}
-                                </td>
-
-                                
-                                <td class="px-4 py-3 flex items-center justify-start w-full space-x-2">
-                                    @livewire('users-details-card', ['user' => $user], key(uniqid()))
-                                    <x-button wire:click="deleteUser({{$user->id}})" class="py-2 px-4 text-sm text-white hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white">Delete</x-button>
-                                    
-                                </td>
-                                    
-                                @empty
-                                    <td class="px-4 py-3 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                                        <span class="text-gray-500">No users</span>
-                                    </td>
-                                    
-                                @endforelse
-                               
+                            {{-- @foreach($doctors as $doctor)
+                            <tr>
+                                <td class="px-4 py-3">{{ $doctor->doctor->name }}</td>
+                                <td class="px-4 py-3">{{ $doctor->days_available }}</td>
+                                <td class="px-4 py-3">{{ $doctor->time_available }}</td>
+                                <td class="px-4 py-3">{{ $doctor->created_at }}</td>
+                                <td class="text-right px-24 py-3"><!-- Action buttons here --></td>
                             </tr>
+                            @endforeach --}}
                             
                         </tbody>
                     </table>
@@ -113,4 +78,5 @@
             </div>
         </div>
         </section>
+
 </div>

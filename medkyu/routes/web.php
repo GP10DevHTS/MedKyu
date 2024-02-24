@@ -3,6 +3,7 @@
 use App\Http\Controllers\loginController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\studentRegistration;
+use App\Livewire\AdminDoctorsDetailsComponent;
 use App\Livewire\AllstudentMedCards;
 use App\Livewire\AllStudentsMedHistoryComponent;
 use App\Livewire\AllUsersComponent;
@@ -52,6 +53,9 @@ Route::get('/all-students', AllstudentMedCards::class)->name('all-students');
 //admin
 Route::get('/users', AllUsersComponent::class)->name('users');
 Route::get('/users/medical_History', AllStudentsMedHistoryComponent::class)->name('users.medical_history');
+
+//doctor details
+Route::get('/users/doctor/', AdminDoctorsDetailsComponent::class)->name('users.doctor');
 }); 
 
 
