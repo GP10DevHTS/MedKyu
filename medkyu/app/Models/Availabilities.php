@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class Availabilities extends Model
 {
     use HasFactory;
-    
+
     // protected $table = 'availability';
 
 
@@ -24,8 +24,8 @@ class Availabilities extends Model
         return $this->belongsTo(User::class, 'doctor_id');
     }
 
-    public function patient()
+    public function student()
     {
-        return $this->belongsTo(User::class, 'patient_id');
+        return $this->belongsTo(User::class, 'student_id');
     }
 }
