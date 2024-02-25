@@ -77,7 +77,7 @@
                                     </td>
 
                                 <td class="text-center px-4 py-3 space-x-2 flex items-center">
-                                    <a href="" class="font-medium border-2 border-black-200 px-4 py-2 rounded text-black dark:text-blue-500 hover:bg-gray-100 hover:text-white">VIEW ACTIVITY</a>
+                                    <a href="{{route('users.doctor.details', $doctor->id)}}" class="font-medium border-2 border-black-200 px-4 py-2 rounded text-black dark:text-blue-500 hover:bg-gray-100 hover:text-white">VIEW ACTIVITY</a>
                                     @livewire('edit-doctor-modal')
                                 </td>
                                 </tr>

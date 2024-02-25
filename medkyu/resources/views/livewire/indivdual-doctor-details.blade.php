@@ -1,0 +1,3 @@
+<div>
+    {{$doctor->name}}
+</div>
