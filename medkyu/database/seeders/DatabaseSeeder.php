@@ -19,7 +19,7 @@ class DatabaseSeeder extends Seeder
         $this->call(EmergencyContactsSeeder::class);
         $this->call(InsuranceInformationSeeder::class);
         $this->call(HealthCareInformationSeeder::class);
-        $this->call(AvailabiltySeeder::class);
+        $this->call(AvailabiltiesSeeder::class);
         $this->call(PrescriptionsSeeder::class);
         $this->call(LabTestsSeeder::class);
 

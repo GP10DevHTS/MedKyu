@@ -61,16 +61,30 @@
                             </tr>
                         </thead>
                         <tbody>
-                            {{-- @foreach($doctors as $doctor)
-                            <tr>
-                                <td class="px-4 py-3">{{ $doctor->doctor->name }}</td>
-                                <td class="px-4 py-3">{{ $doctor->days_available }}</td>
-                                <td class="px-4 py-3">{{ $doctor->time_available }}</td>
-                                <td class="px-4 py-3">{{ $doctor->created_at }}</td>
-                                <td class="text-right px-24 py-3"><!-- Action buttons here --></td>
-                            </tr>
-                            @endforeach --}}
-                            
+                            @foreach ($doctors as $doctor)
+                            <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
+                                <td class="px-4 py-3 font-normal text-gray-900 whitespace-nowrap dark:text-white">
+                                    {{ $doctor->doctor->name }}
+                                </td>
+                                
+                                <td class="px-4 py-3 font-normal text-gray-900 whitespace-nowrap dark:text-white">
+                                    {{ $doctor->day_of_week }}
+                                </td>
+                                <td class="px-4 py-3 font-normal text-gray-900 whitespace-nowrap dark:text-white">
+                                    {{ $doctor->start_time }} - {{ $doctor->end_time }}
+                                <td class="px-4 py-3 font-normal text-gray-900 whitespace-nowrap dark:text-white">
+                                    {{ $doctor->created_at }}
+                                    </td>
+
+                                <td class="text-center px-4 py-3 space-x-2 flex items-center">
+                                    <a href="" class="font-medium border-2 border-black-200 px-4 py-2 rounded text-black dark:text-blue-500 hover:bg-gray-100 hover:text-white">VIEW ACTIVITY</a>
+                                    @livewire('edit-doctor-modal')
+                                </td>
+                                </tr>
+                            @endforeach
+
+                           
+                        
                         </tbody>
                     </table>
                 </div>

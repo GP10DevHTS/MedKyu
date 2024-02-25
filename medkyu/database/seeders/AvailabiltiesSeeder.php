@@ -6,7 +6,7 @@ use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
 use Faker\Factory as Faker;
 
-class availabiltySeeder extends Seeder
+class availabiltiesSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -24,9 +24,9 @@ class availabiltySeeder extends Seeder
         $daysOfWeek = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'];
 
         foreach ($studentIds as $studentId) {
-            // Generate random availability records for each student
-            for ($i = 0; $i < 5; $i++) { // Generating availability for 5 days a week
-                DB::table('availabilty')->insert([
+            // Generate random availabilities records for each student
+            for ($i = 0; $i < 5; $i++) { // Generating availabilities for 5 days a week
+                DB::table('availabilities')->insert([
                     'doctor_id' => $studentId,
                     'day_of_week' => $faker->randomElement($daysOfWeek),
                     'start_time' => $faker->time('H:i'),

@@ -11,7 +11,14 @@ use Laravel\Jetstream\HasProfilePhoto;
 use Laravel\Sanctum\HasApiTokens;
 use Spatie\Permission\Traits\HasRoles;
 
+
 use App\Models\EmergencyContact;
+use App\Models\MedicalInformation;
+use App\Models\InsuranceInformation;
+use App\Models\HealthCareInformation;
+use App\Models\Availabilities;
+use App\Models\Prescriptions;
+use App\Models\LabTests;
 
 
 
@@ -87,7 +94,8 @@ class User extends Authenticatable
     }
     public function availability()
     {
-        return $this->hasMany(Availability::class, 'doctor_id');
+        return $this->hasMany(Availabilities::class, 'doctor_id');
     }
+    
     
 }

@@ -3,7 +3,7 @@
 namespace App\Livewire;
 
 use Livewire\Component;
-use App\Models\Availability;
+use App\Models\Availabilities;
 
 class AdminDoctorsDetails extends Component
 {
@@ -11,8 +11,8 @@ class AdminDoctorsDetails extends Component
 
     public function mount()
     {
-        // Fetch all doctors with their availability details
-        // $this->doctors = Availability::with('doctor')->get();
+        $this->doctors = Availabilities::with('doctor')->get();
+        // dd($this->doctors);
     }
     
     public function render()
