@@ -17,4 +17,16 @@ class LabTest extends Model
         'interpretation',
         'test_date',
     ];
+
+    public function student()
+    {
+        return $this->belongsTo(User::class, 'student_id');
+    }
+
+    public function doctor()
+    {
+        return $this->belongsTo(User::class, 'doctor_id');
+    }
+    
+
 }

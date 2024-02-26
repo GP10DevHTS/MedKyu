@@ -59,6 +59,10 @@
                         </table>
                     </div>
 
+                    <div class="w-full ">
+                        <h2 class="text-xl font-semibold mb-3">Test List</h2>
+                        @livewire('indivdual-doctor-lab-tests-table', ['id' => $doctor->id])
+
                 </div>
             </div>
         </div>

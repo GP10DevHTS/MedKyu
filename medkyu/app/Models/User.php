@@ -18,7 +18,7 @@ use App\Models\InsuranceInformation;
 use App\Models\HealthCareInformation;
 use App\Models\Availabilities;
 use App\Models\Prescriptions;
-use App\Models\LabTests;
+use App\Models\LabTest;
 
 
 
@@ -78,7 +78,11 @@ class User extends Authenticatable
 
     public function student()
     {
-        return $this->belongsTo(User::class, 'student_id');
+        return $this->belongsTo(User::class);
+    }
+    public function doctor()
+    {
+        return $this->belongsTo(User::class);
     }
     public function insurance_information()
     {
@@ -97,5 +101,9 @@ class User extends Authenticatable
         return $this->hasMany(Availabilities::class, 'doctor_id');
     }
     
+    public function lab_tests()
+    {
+        return $this->hasMany(LabTest::class, 'student_id');
+    }
     
 }
