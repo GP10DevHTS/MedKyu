@@ -18,9 +18,9 @@ class LabTest extends Model
         'test_date',
     ];
 
-    public function student()
+    public function patient()
     {
-        return $this->belongsTo(User::class, 'student_id');
+        return $this->belongsTo(User::class,'patient_id');
     }
 
     public function doctor()

@@ -13,12 +13,14 @@ class AdminDoctorsDetails extends Component
 
     public function mount()
     {
-        $this->doctors = Availabilities::with('doctor')->get();
+        $this->doctors = User::role('doctor')->get();
 
     }
 
     public function render()
     {
+        $this->doctors = User::role('doctor')->get();
+    
         return view('livewire.admin-doctors-details');
     }
 }

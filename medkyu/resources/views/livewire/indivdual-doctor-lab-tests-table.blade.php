@@ -26,12 +26,18 @@
         </tr>
     </thead>
     <tbody>
-       {{-- @forelse ($labTests as $test )
+        
 
-           
-       @empty
-           
-       @endforelse --}}
+        @foreach ($labTests as $labTest)
+        <tr>
+            <td class="px-4 py-3">{{ $labTest->patient->name }}</td>
+            <td class="px-4 py-3">{{ $labTest->test_name }}</td>
+            <td class="px-4 py-3">{{ $labTest->sample_type }}</td>
+            <td class="px-4 py-3">{{ $labTest->interpretation }}</td>
+            <td class="px-4 py-3">{{ $labTest->test_date }}</td>
+        </tr>
+    @endforeach
+       
     </tbody>
 </table>
 </div>

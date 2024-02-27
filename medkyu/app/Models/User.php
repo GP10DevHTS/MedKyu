@@ -103,7 +103,7 @@ class User extends Authenticatable
     
     public function lab_tests()
     {
-        return $this->hasMany(LabTest::class, 'student_id');
+        return $this->hasMany(LabTest::class);
     }
     
 }
