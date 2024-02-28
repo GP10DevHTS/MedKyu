@@ -10,7 +10,7 @@ class AllUsersTable extends Component
     public function render()
     {
         
-        $users = User::with('roles')->get();
+        $users = User::role('student')->get(); 
         return view('livewire.all-users-table', ['users' => $users]);
     }
     public function deleteUser($id){

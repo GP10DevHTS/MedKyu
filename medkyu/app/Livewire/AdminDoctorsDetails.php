@@ -19,7 +19,7 @@ class AdminDoctorsDetails extends Component
 
     public function render()
     {
-        $this->doctors = User::role('doctor')->get();
+        // $this->doctors = User::role('doctor')->get();
     
         return view('livewire.admin-doctors-details');
     }

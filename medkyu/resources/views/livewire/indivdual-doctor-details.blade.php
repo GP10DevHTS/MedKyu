@@ -12,7 +12,7 @@
                                 <div class="py-8 -px-4">
                                 <p class="font-light text-gray-500 sm:text-xl dark:text-gray-400">Name : <span >{{$doctor->doctor->name}}</span></p>
                                 <p class="font-light text-gray-500 sm:text-xl dark:text-gray-400">Email : <span >{{$doctor->doctor->email}}</span></p>
-                                <p class="font-light text-gray-500 sm:text-xl dark:text-gray-400">Phone : <span >{{$doctor->doctor->roles->pluck('name')[0]}}</span></p>
+                                <p class="font-light text-gray-500 sm:text-xl dark:text-gray-400">Role : <span >{{$doctor->doctor->roles->first()->name}}</span></p>
                                 </div>
                                 {{-- <p class="font-light text-gray-500 sm:text-xl dark:text-gray-400">Phone : <span >{{$doctor->doctor->phone}}</span></p>
                                 <p class="font-light text-gray-500 sm:text-xl dark:text-gray-400">Address : <span >{{$doctor->doctor->address}}</span></p> --}}

@@ -88,10 +88,10 @@ class User extends Authenticatable
     {
         return $this->hasMany(InsuranceInformation::class, 'student_id');
     }
-    public function insurance_informations()
-    {
-        return $this->hasMany(InsuranceInformation::class, 'student_id');
-    }
+    // public function insurance_informations()
+    // {
+    //     return $this->hasMany(InsuranceInformation::class, 'student_id');
+    // }
     public function medical_history()
     {
         return $this->hasMany(MedicalInformation::class, 'student_id');
@@ -103,7 +103,16 @@ class User extends Authenticatable
     
     public function lab_tests()
     {
-        return $this->hasMany(LabTest::class);
+        return $this->hasMany(LabTest::class,'patient_id');
+    }
+
+    public function prescriptions()
+    {
+        return $this->hasMany(Prescription::class, 'patient_id');
     }
     
+    public function emergency_contact()
+    {
+        return $this->hasMany(EmergencyContact::class, 'student_id');
+    }
 }
