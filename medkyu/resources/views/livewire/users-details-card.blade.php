@@ -47,10 +47,40 @@
         <div class="hidden p-4 bg-white rounded-lg md:p-8 dark:bg-gray-800" id="about" role="tabpanel" aria-labelledby="about-tab">
             {{-- <h2 class="mb-5 text-2xl font-extrabold tracking-tight text-gray-900 dark:text-white">We invest in the world’s potential</h2> --}}
             <!-- List -->
-            <h2 class="text-xl font-semibold mb-4">Medical History</h2>
-                    @foreach ($user->medical_history as $medical_history)
-                        <p class="mb-1 space-x-2"><span class="font-bold">Medical History:</span> {{ $medical_history }}</p>
-                    @endforeach
+            <div>
+
+                        @foreach ($user->medical_history as $medical_history)
+                        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 border border-gray-300 dark:border-gray-700 p-2 mb-2 " >
+                            <p class="mb-1 space-x-2"><span class="font-bold">Blood Type:</span> {{ $medical_history->blood_type }}</p>
+                            <p class="mb-1 space-x-2"><span class="font-bold">Height:</span> {{ $medical_history->height }}  </p>
+                            <p class="mb-1 space-x-2"><span class="font-bold">Weight:</span> {{ $medical_history->weight }}</p>
+                        </div>
+                        <table class="w-full text-sm text-left text-gray-500 dark:text-gray-400">
+                            <thead class="text-xs text-gray-700 uppercase bg-slate-300 dark:bg-gray-700 dark:text-gray-400">
+                                <tr class="border-b dark:border-gray-700 w-full" >
+                                   <th scope="col" class="px-4 py-3">Medical History</th>
+                                    <th scope="col" class="px-4 py-3">Allegies</th>
+                                    <th scope="col" class="px-4 py-3">Current Medication</th>
+                                    <th scope="col" class="px-4 py-3">Special Needs</th>
+                                    <th scope="col" class="px-4 py-3">Chronical Illnesses</th>
+                                    {{-- <th scope="col" class="px-4 py-3">Time</th> --}}
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
+                                    <th scope="row" class="px-4 py-3 font-medium text-gray-900 dark:text-white">{{ $medical_history->medical_history }}</th>
+                                    <td class="px-4 py-3">{{ $medical_history->allergies }}</td>
+                                    <td class="px-4 py-3">{{ $medical_history->current_medications }}</td>
+                                    <td class="px-4 py-3">{{ $medical_history->special_needs }}</td>
+                                    <td class="px-4 py-3">{{ $medical_history->chronical_illnesses }}</td>
+                                    {{-- <td class="px-4 py-3">{{ $medical_history->time }}</td> --}}
+                                </tr>
+
+                            </tbody>
+                        </table>
+
+                        @endforeach
+        </div>
         </div>
         <div class="hidden p-4 bg-white rounded-lg dark:bg-gray-800" id="faq" role="tabpanel" aria-labelledby="faq-tab">
             {{-- <div id="accordion-flush" data-accordion="collapse" data-active-classes="bg-white dark:bg-gray-800 text-gray-900 dark:text-white" data-inactive-classes="text-gray-500 dark:text-gray-400"> --}}
@@ -132,7 +162,7 @@
         <p class="mb-1 text-sm font-medium text-gray-900 dark:text-white">Email: {{ $user->email }}</p>
 
         </div>
-            
+
 
         </div>
             </div>
