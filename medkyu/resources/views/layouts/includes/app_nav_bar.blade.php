@@ -20,35 +20,35 @@
             <svg class="w-6 h-6 text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
                <path stroke="currentColor" stroke-width="2" d="M7 17v1c0 .6.4 1 1 1h8c.6 0 1-.4 1-1v-1a3 3 0 0 0-3-3h-4a3 3 0 0 0-3 3Zm8-9a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z"/>
              </svg>
-               <span class="flex-1 ms-3 text-left rtl:text-right whitespace-nowrap">Personal Records</span>
+               <span class="flex-1 ms-3 text-left rtl:text-right whitespace-nowrap">User Management</span>
                <svg class="w-6 h-6 text-gray-800 dark:text-white transform group-hover:rotate-90 transition duration-200" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
                   <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 12H5m14 0-4 4m4-4-4-4"/>
                 </svg>
 
            </button>
            <ul id="dropdown-example" class="hidden py-2 space-y-2">
-               <li>
+               <li class="ms-2">
                    <a href="{{ route('users') }}" class="flex items-center w-full p-2 text-gray-900 transition duration-75 rounded-lg pl-11 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700">
                        {{-- <svg class="w-5 h-5 text-gray-500 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white" fill="currentColor" viewBox="0 0 20 20">
                            <path d="M15.776 4.224a.75.75 0 0 1 0 1.06L10.06 10l5.716 5.716a.75.75 0 1 1-1.06 1.06L9 11.06 3.284 16.776a.75.75 0 1 1-1.06-1.06L7.94 10 2.224 4.284a.75.75 0 0 1 1.06-1.06L9 8.94l5.716-5.716a.75.75 0 0 1 1.06 0Z"/>
                        </svg> --}}
-                       <span class="ml-3">All Users</span>
+                       <span class="ml-3">Patients</span>
                    </a>
                </li>
-               <li>
-                   <a href="{{ route('users.medical_history') }}" class="flex items-center w-full p-2 text-gray-900 transition duration-75 rounded-lg pl-11 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700">
+               {{-- <li>
+                   <a href="{{ route('users.medical_history') }}" class="flex items-center w-full p-2 text-gray-900 transition duration-75 rounded-lg pl-11 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700"> --}}
                        {{-- <svg class="w-5 h-5 text-gray-500 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white" fill="currentColor" viewBox="0 0 20 20">
                            <path d="M15.776 4.224a.75.75 0 0 1 0 1.06L10.06 10l5.716 5.716a.75.75 0 1 1-1.06 1.06L9 11.06 3.284 16.776a.75.75 0 1 1-1.06-1.06L7.94 10 2.224 4.284a.75.75 0 0 1 1.06-1.06L9 8.94l5.716-5.716a.75.75 0 0 1 1.06 0Z"/>
                        </svg> --}}
-                       <span class="ml-3">Students Medical History</span>
+                       {{-- <span class="ml-3">Students Medical History</span>
                    </a>
-               </li>
+               </li> --}}
                <li class="ms-2">
                      <a href="{{ route('users.doctor') }}" class="flex items-center w-full p-2 text-gray-900 transition duration-75 rounded-lg pl-11 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700">
                          {{-- <svg class="w-5 h-5 text-gray-500 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white" fill="currentColor" viewBox="0 0 20 20">
                              <path d="M15.776 4.224a.75.75 0 0 1 0 1.06L10.06 10l5.716 5.716a.75.75 0 1 1-1.06 1.06L9 11.06 3.284 16.776a.75.75 0 1 1-1.06-1.06L7.94 10 2.224 4.284a.75.75 0 0 1 1.06-1.06L9 8.94l5.716-5.716a.75.75 0 0 1 1.06 0Z"/>
                          </svg> --}}
-                         <span class="ml-3">Doctors Details</span>
+                         <span class="ml-3">Doctors</span>
                      </a>
                </li>
            </ul>

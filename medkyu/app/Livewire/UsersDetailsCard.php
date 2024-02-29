@@ -19,7 +19,7 @@ class UsersDetailsCard extends Component
 
     public function mount($id){
        $this->user = User::findOrFail($id);
-    //    $this->emergency_contacts = User::with('emergency_contacts','insurance_information','medical_history','lab_tests')->where('id', $id)->get();
+    
 
     }
     
