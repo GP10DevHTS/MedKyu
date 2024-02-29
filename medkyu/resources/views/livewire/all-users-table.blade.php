@@ -1,16 +1,14 @@
 <div>
-    {{-- The Master doesn't talk, he acts. --}}
-    <section class="">
-        <div class="mx-auto max-w-screen-xl px-1 py-5 ">
-            <!-- Start coding here -->
-            <div class="bg-white dark:bg-gray-800 relative shadow-md sm:rounded-lg overflow-hidden">
-                <div class="flex flex-col md:flex-row items-center justify-between space-y-3 md:space-y-0 md:space-x-4 p-4">
+    {{-- <section class="">
+        <div class="mx-auto max-w-screen-xl px-4 py-5"> --}}
+            {{-- <div class="bg-white dark:bg-gray-800 shadow-md sm:rounded-lg overflow-hidden"> --}}
+                <div class="flex flex-col md:flex-row items-center justify-between space-y-3 md:space-y-0 md:space-x-4 py-4 px-4 md:px-0">
                     <div class="w-full md:w-1/2">
                         <form class="flex items-center">
                             <label for="simple-search" class="sr-only">Search</label>
                             <div class="relative w-full">
                                 <div class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
-                                    <svg aria-hidden="true" class="w-5 h-5 text-gray-500 dark:text-gray-400" fill="currentColor" viewbox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                                    <svg aria-hidden="true" class="w-5 h-5 text-gray-500 dark:text-gray-400" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
                                         <path fill-rule="evenodd" d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z" clip-rule="evenodd" />
                                     </svg>
                                 </div>
@@ -47,71 +45,55 @@
                 <div class="w-full">
                     <table class="w-full text-sm text-left text-gray-500 dark:text-gray-400">
                         <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
-                            <tr class="border-b dark:border-gray-700 w-full" >
-                               <th scope="col" class="px-4 py-3">User Details</th>
+                            <tr class="border-b dark:border-gray-700 w-full">
+                                <th scope="col" class="px-4 py-3">User Details</th>
                                 <th scope="col" class="px-4 py-3">Roles</th>
                                 <th scope="col" class="px-4 py-3">Joined Date</th>
-                                <th scope="col" class="px-4 py-3">updated At</th>
-                                <th scope="col " class="text-right px-24   py-3">Action</th>
+                                <th scope="col" class="px-4 py-3">Updated At</th>
+                                <th scope="col" class="text-right px-4 py-3">Action</th>
                             </tr>
                         </thead>
                         <tbody>
                             @forelse ($users as $user)
                             <tr class="border-b dark:border-gray-700">
-                                
                                 <td class="px-4 py-3 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                                    <div class="flex items-center ">
-                                    <img class="w-10 h-10 rounded-full" src="{{$user->profile_photo_url}}" alt="">
-                                    {{$user->name}}<br>
-                                    {{$user->email}}
+                                    <div class="flex items-center">
+                                        <img class="w-10 h-10 rounded-full" src="{{ $user->profile_photo_url }}" alt="{{ $user->name }}">
+                                        <div class="ml-3">
+                                            <div>{{ $user->name }}</div>
+                                            <div class="text-gray-500">{{ $user->email }}</div>
+                                        </div>
                                     </div>
-                                    
                                 </td>
                                 <td class="px-4 py-3 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                                    {{-- display roles --}}
-                                    @if ($user->roles)
-                                        @forelse ($user->roles as $role)
-                                        <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-blue-100 text-blue-800 dark:bg-blue-800 dark:text-blue-100">
-                                            {{$role->name}}
-                                        </span>
+                                    @forelse ($user->roles as $role)
+                                    <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-blue-100 text-blue-800 dark:bg-blue-800 dark:text-blue-100">{{ $role->name }}</span>
                                     @empty
-                                        <span class="text-gray-500">No roles</span>
+                                    <span class="text-gray-500">No roles</span>
                                     @endforelse
-                                    @else
-                                        <span class="text-gray-500">No roles</span>
-                                    @endif
                                 </td>
                                 <td class="px-4 py-3 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                                    {{-- display created_at --}}
-                                    {{$user->created_at}}
+                                    {{ $user->created_at->format('M d, Y') }}
                                 </td>
                                 <td class="px-4 py-3 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                                    {{-- display updated_at --}}
-                                    {{$user->updated_at}}
+                                    {{ $user->updated_at->format('M d, Y') }}
                                 </td>
-
-                                
-                                <td class="px-4 py-3 flex items-center justify-start w-full space-x-2">
-                                    {{-- @livewire('users-details-card', ['user' => $user], key(uniqid())) --}}
-                                   <a href="{{route('student.details', $user->id)}}" class="py-2 px-4 text-sm text-white hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white">Edit</a>
-                                    <x-button wire:click="deleteUser({{$user->id}})" class="py-2 px-4 text-sm text-white hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white">Delete</x-button>
-                                    
+                                <td class="px-4 py-3 flex items-center justify-end space-x-4">
+                                    <a href="{{ route('student.details', $user->id) }}" class="py-2 px-4 text-md text-blue-500 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white border-2 border-blue-500 rounded">View</a>
+                                    <x-button wire:click="deleteUser({{ $user->id }})" class="py-2 px-4 text-sm text-white hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white">Delete</x-button>
                                 </td>
-                                    
-                                @empty
-                                    <td class="px-4 py-3 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                                        <span class="text-gray-500">No users</span>
-                                    </td>
-                                    
-                                @endforelse
-                               
                             </tr>
-                            
+                            @empty
+                            <tr>
+                                <td class="px-4 py-3 font-medium text-gray-900 whitespace-nowrap dark:text-white" colspan="5">
+                                    <span class="text-gray-500">No users</span>
+                                </td>
+                            </tr>
+                            @endforelse
                         </tbody>
                     </table>
                 </div>
-               
             </div>
-        </div>
-        </section>
+        {{-- </div> --}}
+    {{-- </section> --}}
 </div>
