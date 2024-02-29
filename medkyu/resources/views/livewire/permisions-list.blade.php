@@ -2,7 +2,7 @@
 
     {{-- Do your work, then step back. --}}
 
-    <nav class="flex mb-4 bg-blue-100 p-3" aria-label="Breadcrumb">
+    <nav class="flex  bg-blue-100 p-3" aria-label="Breadcrumb">
         <ol class="inline-flex items-center space-x-1 md:space-x-2 rtl:space-x-reverse">
           <li class="inline-flex items-center">
             <a href="#" class="inline-flex items-center text-sm font-medium text-gray-700 hover:text-blue-600 dark:text-gray-400 dark:hover:text-white">
@@ -36,8 +36,15 @@
     
     {{-- Be like water. main-content --}} 
     
-
+    <div class="max-w-7xl mx-auto sm:px-6 lg:px-8 bg-gray-100 dark:bg-gray-800 py-8">
+      <div class="bg-white dark:bg-gray-800 overflow-hidden shadow-sm sm:rounded-lg">
+          <div class="p-6 text-gray-900 dark:text-gray-100">
     @livewire('permission-list-table')
+
+
+    </div>
+    </div>
+    </div>
 
     
 

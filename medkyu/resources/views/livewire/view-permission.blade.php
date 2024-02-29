@@ -1,7 +1,7 @@
 <!-- resources/views/livewire/view-permission.blade.php -->
 
 <div>
-    <button wire:click="openModal()">Edit</button>
+    <button wire:click="openModal() " class="py-2 px-4 text-md text-blue-500 hover:bg-gray-100 dark:hover: dark:text-gray-200 dark:hover:text-white border-2 border-blue-500 rounded">Edit</button>
 
     <x-dialog-modal wire:model="isModalOpen">
         <x-slot name="title">
