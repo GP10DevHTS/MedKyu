@@ -40,9 +40,46 @@
     <div id="fullWidthTabContent" class="border-t border-gray-200 dark:border-gray-600">
         <div class="hidden p-4 bg-white rounded-lg md:p-8 dark:bg-gray-800" id="stats" role="tabpanel" aria-labelledby="stats-tab">
             {{-- <dl class="grid max-w-screen-xl grid-cols-2 gap-8 p-4 mx-auto text-gray-900 sm:grid-cols-3 xl:grid-cols-6 dark:text-white sm:p-8"> --}}
-                <h2 class="text-xl font-semibold mb-4">Insurance Information</h2>
+                {{-- <h2 class="text-xl font-semibold mb-4">Insurance Information</h2> --}}
                     @foreach ($user->insurance_information as $insurance_information)
-                        <p class="mb-1 space-x-2"><span class="font-bold">Insurance Information:</span> {{ $insurance_information }}</p>
+                    <div class="bg-white shadow-lg rounded-lg overflow-hidden">
+                        <div class="p-8">
+                            <h2 class="text-2xl font-bold mb-4">Insurance Information</h2>
+                            
+                            <div class="grid grid-cols-2 gap-4">
+                               
+                                <div class="flex flex-col">
+                                    <label class="text-gray-600 font-semibold mb-1">Insurance Name:</label>
+                                    <p class="text-gray-800">{{ $insurance_information->insurance_name }}</p>
+                                </div>
+                                <div class="flex flex-col">
+                                    <label class="text-gray-600 font-semibold mb-1">Insurance Number:</label>
+                                    <p class="text-gray-800">{{ $insurance_information->insurance_number }}</p>
+                                </div>
+                                <div class="flex flex-col">
+                                    <label class="text-gray-600 font-semibold mb-1">Insurance Provider:</label>
+                                    <p class="text-gray-800">{{ $insurance_information->insurance_provider }}</p>
+                                </div>
+                                <div class="flex flex-col">
+                                    <label class="text-gray-600 font-semibold mb-1">Policy Number:</label>
+                                    <p class="text-gray-800">{{ $insurance_information->policy_number }}</p>
+                                </div>
+                                <div class="flex flex-col col-span-2">
+                                    <label class="text-gray-600 font-semibold mb-1">Coverage Details:</label>
+                                    <p class="text-gray-800">{{ $insurance_information->coverage_details }}</p>
+                                </div>
+                                <div class="flex flex-col">
+                                    <label class="text-gray-600 font-semibold mb-1">Created At:</label>
+                                    <p class="text-gray-800">{{ $insurance_information->created_at }}</p>
+                                </div>
+                                <div class="flex flex-col">
+                                    <label class="text-gray-600 font-semibold mb-1">Updated At:</label>
+                                    <p class="text-gray-800">{{ $insurance_information->updated_at }}</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
                     @endforeach
             {{-- </dl> --}}
         </div>
