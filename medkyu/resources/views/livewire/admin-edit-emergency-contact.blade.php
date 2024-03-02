@@ -28,13 +28,13 @@
         
             <div class="col-span-6 sm:col-span-4">
                 <x-label for="contact_number" value="Contact Number" />
-                <x-input id="contact_number" class="block mt-1 w-full" type="text" wire:model.defer="contact_number" />
+                <x-input id="contact_number" class="block mt-1 w-full" type="number" wire:model.defer="contact_number" />
                 <x-input-error for="contact_number" class="mt-2" />
             </div>
         
             <div class="col-span-6 sm:col-span-4">
                 <x-label for="contact_email" value="Contact Email" />
-                <x-input id="contact_email" class="block mt-1 w-full" type="text" wire:model.defer="contact_email" />
+                <x-input id="contact_email" class="block mt-1 w-full" type="email" wire:model.defer="contact_email" />
                 <x-input-error for="contact_email" class="mt-2" />
             </div>
         </x-slot>
