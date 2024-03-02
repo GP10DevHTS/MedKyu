@@ -43,8 +43,8 @@
         <div class="col-span-12 rounded-lg border border-gray-200  p-3 sm:col-span-8  w-full">
           <!-- Main Content -->
 
-
-
+          
+    
 
     <div class="w-full bg-white rounded-lg shadow dark:bg-gray-800 ">
      <div class="sm:hidden">
@@ -262,6 +262,9 @@
 
 
         </div>
+        <div class="flex items-center justify-between mb-6 p-4 ">  
+          <a href="{{route('users.student.edit',$user->id)}}" class="text-md font-medium text-gray-700 hover:text-blue-600 dark:text-gray-400 dark:hover:text-white focus:outline-none focus:underline focus:text-blue-600 dark:focus:text-blue-500 border-b-2 border-blue-600 dark:border-blue-500 px-2 py-1 w-20 text-center">Edit</a>
+          </div>
     </div>
 </div>
 

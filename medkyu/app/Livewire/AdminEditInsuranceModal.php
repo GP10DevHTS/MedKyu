@@ -4,6 +4,7 @@ namespace App\Livewire;
 
 use Livewire\Component;
 use App\Models\InsuranceInformation;
+use App\Models\User;
 
 class AdminEditInsuranceModal extends Component
 {
@@ -14,6 +15,12 @@ class AdminEditInsuranceModal extends Component
     public $insuranceProvider;
     public $policyNumber;
     public $coverageDetails;
+    public $student;
+    public function mount($id){
+        $this->student = User::findOrFail($id);
+        $this->insuranceInformation = InsuranceInformation::where('student_id', $this->student->id)->first();
+        
+    }
 
     protected $rules = [
         'insuranceName' => 'required',
