@@ -13,6 +13,7 @@ use App\Livewire\ViewRoleDetails;
 use App\Livewire\MedicalCard;
 use App\Livewire\ShowUsersDetails;
 use App\Livewire\IndivdualDoctorDetails;
+use App\Livewire\StudentEditProfileComponent;
 use App\Livewire\UsersDetailsCard;
 
 /*
@@ -63,5 +64,6 @@ Route::get('/student/{id}', UsersDetailsCard::class)->name('student.details');
 Route::get('/users/doctor/', AdminDoctorsDetailsComponent::class)->name('users.doctor');
 }); 
 Route::get('/users/doctor/{id}', IndivdualDoctorDetails::class)->name('users.doctor.details');
+Route::get('/users/student/{id}/edit', StudentEditProfileComponent::class)->name('users.student.edit');
 
 
