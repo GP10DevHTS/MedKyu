@@ -11,6 +11,9 @@
 
         <x-slot name="form">
             <div class="col-span-6 sm:col-span-4">
+                <x-validation-errors class="mb-4" />
+            </div>
+            <div class="col-span-6 sm:col-span-4">
                 <x-label for="test_name" value="Test Name" />
                 <x-input id="test_name" class="block mt-1 w-full" type="text" wire:model.defer="test_name" />
                 <x-input-error for="test_name" class="mt-2" />

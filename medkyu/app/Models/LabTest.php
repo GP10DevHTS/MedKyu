@@ -10,6 +10,8 @@ class LabTest extends Model
     use HasFactory;
 
     protected $fillable = [
+        'doctor_id',
+        'patient_id',
         'test_name',
         'sample_type',
         'result_value',

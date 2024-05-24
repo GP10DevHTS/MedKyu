@@ -9,6 +9,9 @@
         </x-slot>
         <<x-slot name="form">
             <div class="col-span-6 sm:col-span-4">
+            <x-validation-errors class="mb-4" />
+            </div>
+            <div class="col-span-6 sm:col-span-4">
                 <x-label for="relationship" value="Relationship" />
                 <x-input id="relationship" class="block mt-1 w-full" type="text" wire:model.defer="relationship" />
                 <x-input-error for="relationship" class="mt-2" />

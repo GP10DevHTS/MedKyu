@@ -10,11 +10,12 @@ class AdminEditInsuranceModal extends Component
 {
     public $showEditInsuranceModal = false;
     public $insuranceInformation;
-    public $insuranceName;
-    public $insuranceNumber;
-    public $insuranceProvider;
-    public $policyNumber;
-    public $coverageDetails;
+    public $student_id;
+    public $insurance_name;
+    public $insurance_number;
+    public $insurance_provider;
+    public $policy_number;
+    public $coverage_details;
     public $student;
     public function mount($id){
         $this->student = User::findOrFail($id);
@@ -23,11 +24,11 @@ class AdminEditInsuranceModal extends Component
     }
 
     protected $rules = [
-        'insuranceName' => 'required',
-        'insuranceNumber' => 'required',
-        'insuranceProvider' => 'required',
-        'policyNumber' => 'required',
-        'coverageDetails' => 'required',
+       'insurance_name' => 'required',
+       'insurance_number' => 'required',
+       'insurance_provider' => 'required',
+       'policy_number' => 'required',
+       'coverage_details' => 'required',
     ];
     
     public function editInsuranceInformation()
@@ -35,18 +36,28 @@ class AdminEditInsuranceModal extends Component
         $this->showEditInsuranceModal = true;
     }
 
-    public function updateInsuranceInformation()
+    public function update()
     {
+        $studentId = $this->student->id;
+        // dd($studentId);
         $this->validate();
-        $this->insuranceInformation->update([
-            'insurance_name' => $this->insuranceName,
-            'insurance_number' => $this->insuranceNumber,
-            'insurance_provider' => $this->insuranceProvider,
-            'policy_number' => $this->policyNumber,
-            'coverage_details' => $this->coverageDetails,
+        $insurance =InsuranceInformation::updateOrCreate([
+            'student_id' => $studentId,
+            'insurance_name' => $this->insurance_name,
+            'insurance_number' => $this->insurance_number,
+            'insurance_provider' => $this->insurance_provider,
+            'policy_number' => $this->policy_number,
+            'coverage_details' => $this->coverage_details,
         ]);
+        $this->dispatch('alert' , [
+            'title' => 'success',
+            'message' => 'Insurance Information Updated.',
+            'icon' => 'success'
+        ]);
+        
+        // dd($insurance);
         // dd($this->insuranceInformation);
-        $this->showEditInsuranceModal = false;
+        // $this->showEditInsuranceModal = false;
     }
 
     public function render()
