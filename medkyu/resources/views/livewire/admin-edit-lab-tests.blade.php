@@ -14,6 +14,16 @@
                 <x-validation-errors class="mb-4" />
             </div>
             <div class="col-span-6 sm:col-span-4">
+                <x-label for="doctor_id" value="Doctor" />
+                <select id="doctor_id" class="block mt-1 w-full border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 rounded-md shadow-sm py-2 px-3" wire:model.defer="doctor_id">
+                    <option value="">Select Doctor</option>
+                    @foreach ($doctors as $doctor)
+                        <option value="{{ $doctor->id }}">{{ $doctor->name }}</option>
+                    @endforeach
+                </select>
+                <x-input-error for="doctor_id" class="mt-2" />
+            </div>
+            <div class="col-span-6 sm:col-span-4">
                 <x-label for="test_name" value="Test Name" />
                 <x-input id="test_name" class="block mt-1 w-full" type="text" wire:model.defer="test_name" />
                 <x-input-error for="test_name" class="mt-2" />

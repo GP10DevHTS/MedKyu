@@ -54,10 +54,15 @@ class AdminEditInsuranceModal extends Component
             'message' => 'Insurance Information Updated.',
             'icon' => 'success'
         ]);
-        
-        // dd($insurance);
-        // dd($this->insuranceInformation);
+        // reset fields
+        $this->insurance_name = '';
+        $this->insurance_number = '';
+        $this->insurance_provider = '';
+        $this->policy_number = '';
+        $this->coverage_details = '';
         // $this->showEditInsuranceModal = false;
+        
+       
     }
 
     public function render()
