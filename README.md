@@ -68,9 +68,14 @@ To install the project locally, follow these steps:
     cd medkyu
 
 3. Install the dependencies:
-    - composer install
-    - npm install
+    - ```composer install```
+    - ```npm install```
 
 ## 5. Configuration
+Set up your environment variables by copying .env.example to .env and updating the necessary values:
+```cp .env.example .env```
+
+Generate an application key:
+```php artisan key:generate```
 
 
