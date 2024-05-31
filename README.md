@@ -129,7 +129,15 @@ After starting the application, you can log in with the following default creden
     Nurse: nurse@kyu.ac.ug / nursepassword
 
 
-##
+## 11. User Roles and Permissions
+MedKyu supports different user roles with specific permissions:
+
+    Admin: Full access to all features.
+    Doctor: Access to patient records, appointments, and medical notes.
+    Nurse: Access to patient care tasks and inventory.
+    Staff: Limited access based on assigned duties.
+
+    
 ##
 ##
 ##
