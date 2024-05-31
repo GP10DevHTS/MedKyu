@@ -170,8 +170,21 @@ Load balancing
 Centralized error handling is implemented to catch and respond to errors consistently across the application.
 
 
-##
-##
+## 18. Logging
+Logging is implemented using Laravel's built-in logging features. Logs are stored in the storage/logs/ directory.
+
+## 19. Monitoring
+Application performance and health are monitored using tools like Laravel Telescope.
+
+## 20. Backup and Restore
+Database backups are automated using Laravel Backup package. Backup scripts are located in the scripts/ directory.
+
+## 21. Maintenance
+Regular maintenance tasks include:
+
+Updating dependencies
+Database optimization
+Security patches
 ##
 ##
 ##
