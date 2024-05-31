@@ -110,7 +110,17 @@ Run the tests using:
 
 ```php artisan test```
 
-##
+## 9. Deployment
+Deploy the application using Docker:
+
+1. Build the Docker image:
+```docker build -t medkyu .```
+2. Run the Docker container:
+```docker run -p 8000:8000 medkyu```
+
+For server deployment, consider using services of [hollytechsolnz.com]("htpps:hollytechsoln.com") .
+
+
 ##
 ##
 ##
