@@ -18,12 +18,13 @@ class AdminEditLabTests extends Component
     public $reference_range;
     public $interpretation;
     public $doctor_id;
+    public $studentId;
     // public $doctors;
     public function mount($id){
         $this->student = User::findOrFail($id);
     }
     public function update(){
-        $studentId = $this->student->id;
+        $this->studentId = $this->student->id;
         $this->validate([
             // 'patient_id' => 'required',
             'test_name' => 'required',
@@ -35,10 +36,10 @@ class AdminEditLabTests extends Component
             'interpretation' => 'required ',
         ]);
         
-        $labtest =LabTest::updateorCreate([
+        LabTest::create([
             'doctor_id' => $this->doctor_id,
             'test_name' => $this->test_name,
-            'patient_id' => $studentId,
+            'patient_id' => $this->studentId,
             'sample_type' => $this->sample_type,
             'result_value' => $this->result_value,
             'test_date' => $this->test_date,
