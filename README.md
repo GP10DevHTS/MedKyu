@@ -105,16 +105,23 @@ To run the application locally:
 
 The application will be available at ```http://localhost:8000```.
 
+## 8. Testing
+Run the tests using:
 
+```php artisan test```
 
-
-
-
-
-
-
-
-
+##
+##
+##
+##
+##
+##
+##
+##
+##
+##
+##
+##
 
 
 
