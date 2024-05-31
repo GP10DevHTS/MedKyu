@@ -91,4 +91,9 @@ To set up the MySQL database:
 ```DB_USERNAME=root```
 ```DB_PASSWORD=password```
 
+3. Run the database migrations:
+    ```php artisan migrate```
+
+
+
 
