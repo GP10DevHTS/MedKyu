@@ -137,8 +137,9 @@ MedKyu supports different user roles with specific permissions:
     Nurse: Access to patient care tasks and inventory.
     Staff: Limited access based on assigned duties.
 
-    
-##
+
+## 12. API Documentation
+The API documentation is available at ```http://localhost:8000/api-docs``` when the application is running.
 ##
 ##
 ##
