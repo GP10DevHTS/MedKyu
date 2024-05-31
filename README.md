@@ -121,7 +121,14 @@ Deploy the application using Docker:
 For server deployment, consider using services of [hollytechsolnz.com]("htpps:hollytechsoln.com") .
 
 
-##
+##10. Usage
+After starting the application, you can log in with the following default credentials:
+
+    Admin: admin@kyu.ac.ug / adminpassword
+    Doctor: doctor@kyu.ac.ug / doctorpassword
+    Nurse: nurse@kyu.ac.ug / nursepassword
+
+
 ##
 ##
 ##
