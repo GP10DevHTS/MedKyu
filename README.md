@@ -94,6 +94,33 @@ To set up the MySQL database:
 3. Run the database migrations:
     ```php artisan migrate```
 
+## 7. Running the Application
+To run the application locally:
+
+1. Start the development server:
+    ```php artisan serve```
+
+2. Start the frontend development server:
+    ```npm run dev```
+
+The application will be available at ```http://localhost:8000```.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
