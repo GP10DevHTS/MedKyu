@@ -48,13 +48,13 @@ MedKyu is a web application designed to manage the hospital operations of Kyambo
 
 ## 3. Technologies Used
 
-- Front-end: React, HTML, CSS, JavaScript
-- Back-end: Node.js, Express.js
-- Database: MongoDB
-- Authentication: JWT (JSON Web Tokens)
-- Deployment: Docker, Kubernetes
+- Framework: Laravel
+- Front-end: Livewire, Jetstream, HTML, CSS, JavaScript
+- Database: MySQL
+- Authentication: Laravel Jetstream
+- Deployment: Docker
 - CI/CD: GitHub Actions
-- Testing: Jest, Mocha, Chai
+- Testing: PHPUnit
 
 ## 4. Installation
 
@@ -71,7 +71,6 @@ To install the project locally, follow these steps:
     - composer install
     - npm install
 
-
-
+## 5. Configuration
 
 
