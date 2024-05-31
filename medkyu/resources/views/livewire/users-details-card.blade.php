@@ -1,5 +1,5 @@
 <div class="bg-gray-100 w-full">
-    <nav class="flex mb-4 bg-blue-100 p-3" aria-label="Breadcrumb">
+    <nav class="fixed mb-4 bg-blue-100 p-3 w-full" aria-label="Breadcrumb">
         <ol class="inline-flex items-center space-x-1 md:space-x-2 rtl:space-x-reverse">
           <li class="inline-flex items-center">
             <a href="#" class="inline-flex items-center text-sm font-medium text-gray-700 hover:text-blue-600 dark:text-gray-400 dark:hover:text-white">
@@ -32,10 +32,10 @@
 
 
     {{-- <div class="max-w-7xl mx-auto sm:px-6 lg:px-8"> --}}
-    <div class="max-w-7xl mx-auto overflow-hidden shadow-sm sm:rounded-lg w-full ">
+    <div class=" mx-auto py-10 sm:px-6 lg:px-8 overflow-hidden shadow-sm sm:rounded-lg w-full ">
             {{-- <div class="p-6 text-gray-900 dark:text-gray-100"> --}}
 
-    <div class=" grid grid-cols-12 gap-4  p-4 w-full">
+    <div class="  gap-4  p-4 w-full">
         {{-- <div class="header col-span-12 rounded-lg border border-gray-300 bg-gray-600 py-8">
           <!-- Header content -->
 
@@ -43,7 +43,21 @@
         <div class="col-span-12 rounded-lg border border-gray-200  p-3 sm:col-span-8  w-full">
           <!-- Main Content -->
 
-          
+          <div class="col-span-12 rounded-lg border border-gray-400 bg-gray-200 p-8 sm:col-span-4">
+            <!-- Sidebar -->
+            <div class="flex flex-col items-center">
+                <!-- Profile Picture -->
+                <div class="mb-6">
+                    <img class="w-24 h-24 rounded-full shadow-lg" src="{{ $user->profile_photo_url }}" alt="Profile Picture">
+                </div>
+                <!-- Profile Information -->
+                <div class="text-center">
+                    <h5 class="mb-2 text-xl font-medium text-gray-900 dark:text-white bg-slate-200 rounded-sm px-4 py-2">Profile Information</h5>
+                    <p class="mb-2 text-sm font-medium text-gray-900 dark:text-white">Name: {{ $user->name }}</p>
+                    <p class="mb-2 text-sm font-medium text-gray-900 dark:text-white">Email: {{ $user->email }}</p>
+                </div>
+            </div>
+        </div>
     
 
     <div class="w-full bg-white rounded-lg shadow dark:bg-gray-800 ">
@@ -71,60 +85,81 @@
     </ul>
     <div id="fullWidthTabContent" class="border-t border-gray-200 dark:border-gray-600">
         <div class="hidden p-4 bg-white rounded-lg md:p-8 dark:bg-gray-800" id="stats" role="tabpanel" aria-labelledby="stats-tab">
-                    @foreach ($user->insurance_information as $insurance_information)
-                    <div class="bg-white shadow-lg rounded-lg overflow-hidden">
-                        <div class="p-8">
-                            <h2 class="text-2xl font-bold mb-4">Insurance Information</h2>
-                            
-                            <div class="grid grid-cols-2 gap-4">
-                               
-                                <div class="flex flex-col">
-                                    <label class="text-gray-600 font-semibold mb-1">Insurance Name:</label>
-                                    <p class="text-gray-800">{{ $insurance_information->insurance_name }}</p>
-                                </div>
-                                <div class="flex flex-col">
-                                    <label class="text-gray-600 font-semibold mb-1">Insurance Number:</label>
-                                    <p class="text-gray-800">{{ $insurance_information->insurance_number }}</p>
-                                </div>
-                                <div class="flex flex-col">
-                                    <label class="text-gray-600 font-semibold mb-1">Insurance Provider:</label>
-                                    <p class="text-gray-800">{{ $insurance_information->insurance_provider }}</p>
-                                </div>
-                                <div class="flex flex-col">
-                                    <label class="text-gray-600 font-semibold mb-1">Policy Number:</label>
-                                    <p class="text-gray-800">{{ $insurance_information->policy_number }}</p>
-                                </div>
-                                <div class="flex flex-col col-span-2">
-                                    <label class="text-gray-600 font-semibold mb-1">Coverage Details:</label>
-                                    <p class="text-gray-800">{{ $insurance_information->coverage_details }}</p>
-                                </div>
-                                <div class="flex flex-col">
-                                    <label class="text-gray-600 font-semibold mb-1">Created At:</label>
-                                    <p class="text-gray-800">{{ $insurance_information->created_at }}</p>
-                                </div>
-                                <div class="flex flex-col">
-                                    <label class="text-gray-600 font-semibold mb-1">Updated At:</label>
-                                    <p class="text-gray-800">{{ $insurance_information->updated_at }}</p>
-                                </div>
-                            </div>
-                        </div>
+            @foreach ($user->insurance_information as $insurance_information)
+            <div class="bg-white shadow-lg rounded-lg overflow-hidden mb-6">
+                <div class="p-8">
+                    <h2 class="text-2xl font-bold mb-4">Insurance Information</h2>
+                    <div class="overflow-x-auto">
+                        <table class="min-w-full bg-white dark:bg-gray-800">
+                            <thead>
+                                <tr>
+                                    <th class="py-2 px-4 border-b text-left text-sm font-semibold text-gray-600 dark:text-gray-300">Field</th>
+                                    <th class="py-2 px-4 border-b text-left text-sm font-semibold text-gray-600 dark:text-gray-300">Details</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td class="py-2 px-4 border-b text-sm text-gray-600 dark:text-gray-400">Insurance Name</td>
+                                    <td class="py-2 px-4 border-b text-sm text-gray-800 dark:text-gray-200">{{ $insurance_information->insurance_name }}</td>
+                                </tr>
+                                <tr>
+                                    <td class="py-2 px-4 border-b text-sm text-gray-600 dark:text-gray-400">Insurance Number</td>
+                                    <td class="py-2 px-4 border-b text-sm text-gray-800 dark:text-gray-200">{{ $insurance_information->insurance_number }}</td>
+                                </tr>
+                                <tr>
+                                    <td class="py-2 px-4 border-b text-sm text-gray-600 dark:text-gray-400">Insurance Provider</td>
+                                    <td class="py-2 px-4 border-b text-sm text-gray-800 dark:text-gray-200">{{ $insurance_information->insurance_provider }}</td>
+                                </tr>
+                                <tr>
+                                    <td class="py-2 px-4 border-b text-sm text-gray-600 dark:text-gray-400">Policy Number</td>
+                                    <td class="py-2 px-4 border-b text-sm text-gray-800 dark:text-gray-200">{{ $insurance_information->policy_number }}</td>
+                                </tr>
+                                <tr>
+                                    <td class="py-2 px-4 border-b text-sm text-gray-600 dark:text-gray-400">Coverage Details</td>
+                                    <td class="py-2 px-4 border-b text-sm text-gray-800 dark:text-gray-200">{{ $insurance_information->coverage_details }}</td>
+                                </tr>
+                                <tr>
+                                    <td class="py-2 px-4 border-b text-sm text-gray-600 dark:text-gray-400">Created At</td>
+                                    <td class="py-2 px-4 border-b text-sm text-gray-800 dark:text-gray-200">{{ $insurance_information->created_at }}</td>
+                                </tr>
+                                <tr>
+                                    <td class="py-2 px-4 text-sm text-gray-600 dark:text-gray-400">Updated At</td>
+                                    <td class="py-2 px-4 text-sm text-gray-800 dark:text-gray-200">{{ $insurance_information->updated_at }}</td>
+                                </tr>
+                            </tbody>
+                        </table>
                     </div>
-                    
-                    @endforeach
-            {{-- </dl> --}}
+                </div>
+            </div>
+            @endforeach
         </div>
+        
 
         <div class="hidden p-4 bg-white rounded-lg md:p-8 dark:bg-gray-800" id="about" role="tabpanel" aria-labelledby="about-tab">
             {{-- <h2 class="mb-5 text-2xl font-extrabold tracking-tight text-gray-900 dark:text-white">We invest in the world’s potential</h2> --}}
             <!-- List -->
             <div>
 
-                        @foreach ($user->medical_history as $medical_history)
-                        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 border border-gray-300 dark:border-gray-700 p-2 mb-2 " >
-                            <p class="mb-1 space-x-2"><span class="font-bold">Blood Type:</span> {{ $medical_history->blood_type }}</p>
-                            <p class="mb-1 space-x-2"><span class="font-bold">Height:</span> {{ $medical_history->height }}  </p>
-                            <p class="mb-1 space-x-2"><span class="font-bold">Weight:</span> {{ $medical_history->weight }}</p>
+                @foreach ($user->medical_history as $medical_history)
+                <div class="bg-white shadow-md rounded-lg p-4 mb-4 dark:bg-gray-800">
+                    <h3 class="text-lg font-semibold mb-3 text-gray-800 dark:text-gray-200">Medical History</h3>
+                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+                        <div class="flex items-center space-x-2">
+                            <span class="font-bold text-gray-600 dark:text-gray-400">Blood Type:</span>
+                            <span class="text-gray-800 dark:text-gray-200">{{ $medical_history->blood_type }}</span>
                         </div>
+                        <div class="flex items-center space-x-2">
+                            <span class="font-bold text-gray-600 dark:text-gray-400">Height:</span>
+                            <span class="text-gray-800 dark:text-gray-200">{{ $medical_history->height }}</span>
+                        </div>
+                        <div class="flex items-center space-x-2">
+                            <span class="font-bold text-gray-600 dark:text-gray-400">Weight:</span>
+                            <span class="text-gray-800 dark:text-gray-200">{{ $medical_history->weight }}</span>
+                        </div>
+                    </div>
+                </div>
+            {{-- @endforeach --}}
+            
                         <table class="w-full text-sm text-left text-gray-500 dark:text-gray-400">
                             <thead class="text-xs text-gray-700 uppercase bg-slate-300 dark:bg-gray-700 dark:text-gray-400">
                                 <tr class="border-b dark:border-gray-700 w-full" >
@@ -163,21 +198,23 @@
                 {{-- <div class="overflow-x-auto"> --}}
 
 
-                    <div class="bg-gray-100 p-4 rounded-lg shadow-md">
-                        <h2 class="text-xl font-bold mb-4">Test Information</h2>
+                    <div class="bg-gray-100 p-6 rounded-lg shadow-md dark:bg-gray-800">
+                        <h2 class="text-2xl font-bold mb-6 text-gray-900 dark:text-gray-100">Test Information</h2>
                         @foreach ($user->lab_tests as $lab_tests)
-                        <div class="flex items-center justify-between mb-2">
-                            <p class="text-gray-700 font-semibold">Doctor:</p>
-                            <p class="text-gray-800">{{ $lab_tests->doctor->name }}</p>
-                        </div>
-                        
-                        <div class="flex items-center justify-between">
-                            <p class="text-gray-700 font-semibold">Test Date:</p>
-                            <p class="text-gray-800">{{ $lab_tests->test_date }}</p>
-                        </div>
-
+                            <div class="bg-white dark:bg-gray-700 p-4 mb-4 rounded-lg shadow-sm">
+                                <div class="flex items-center justify-between mb-2">
+                                    <p class="text-gray-600 dark:text-gray-400 font-semibold">Doctor:</p>
+                                    <p class="text-gray-800 dark:text-gray-200">{{ $lab_tests->doctor->name }}</p>
+                                </div>
+                                
+                                <div class="flex items-center justify-between">
+                                    <p class="text-gray-600 dark:text-gray-400 font-semibold">Test Date:</p>
+                                    <p class="text-gray-800 dark:text-gray-200">{{ $lab_tests->test_date }}</p>
+                                </div>
+                            </div>
                         @endforeach
                     </div>
+                    
 
                     <table class="table-auto border-collapse w-full overflow-x-auto mt-4">
                         <thead class="bg-gray-200">
@@ -262,8 +299,9 @@
 
 
         </div>
-        <div class="flex items-center justify-between mb-6 p-4 ">  
-          <a href="{{route('users.student.edit',$user->id)}}" class="text-md font-medium text-gray-700 hover:text-blue-600 dark:text-gray-400 dark:hover:text-white focus:outline-none focus:underline focus:text-blue-600 dark:focus:text-blue-500 border-b-2 border-blue-600 dark:border-blue-500 px-2 py-1 w-20 text-center">Edit</a>
+        <div class=" items-center justify-between mb-6 p-4 ">  
+          <a href="{{route('users.student.edit',$user->id)}}" class="text-md font-medium text-gray-700 hover:text-blue-600 dark:text-gray-400 dark:hover:text-white focus:outline-none  focus:text-blue-600 dark:focus:text-blue-500 border-b-2 border-blue-600 dark:border-blue-500 px-2 py-1 w-20 text-center">Edit</a>
+          {{-- <a href="#" class="text-md font-medium text-gray-700 hover:text-blue-600 dark:text-gray-400 dark:hover:text-white focus:outline-none focus:underline focus:text-blue-600 dark:focus:text-blue-500 border-b-2 border-blue-600 dark:border-blue-500 px-2 py-1 w-20 text-center">Attach Doctor</a> --}}
           </div>
     </div>
 </div>
@@ -272,21 +310,7 @@
 
 
         </div>
-        <div class="col-span-12 rounded-lg border border-gray-400 bg-gray-200 p-8 sm:col-span-4">
-            <!-- Sidebar -->
-            <div class="flex flex-col items-center">
-                <!-- Profile Picture -->
-                <div class="mb-6">
-                    <img class="w-24 h-24 rounded-full shadow-lg" src="{{ $user->profile_photo_url }}" alt="Profile Picture">
-                </div>
-                <!-- Profile Information -->
-                <div class="text-center">
-                    <h5 class="mb-2 text-xl font-medium text-gray-900 dark:text-white bg-slate-200 rounded-sm px-4 py-2">Profile Information</h5>
-                    <p class="mb-2 text-sm font-medium text-gray-900 dark:text-white">Name: {{ $user->name }}</p>
-                    <p class="mb-2 text-sm font-medium text-gray-900 dark:text-white">Email: {{ $user->email }}</p>
-                </div>
-            </div>
-        </div>
+       
         
 
         </div>
