@@ -59,3 +59,19 @@ MedKyu is a web application designed to manage the hospital operations of Kyambo
 ## 4. Installation
 
 To install the project locally, follow these steps:
+
+1. Clone the repository:
+   ```sh
+   git clone https://github.com/yourusername/medkyu.git
+
+2. Navigate to the project directory:
+    cd medkyu
+
+3. Install the dependencies:
+    - composer install
+    - npm install
+
+
+
+
+
