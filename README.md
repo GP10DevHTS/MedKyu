@@ -78,4 +78,17 @@ Set up your environment variables by copying .env.example to .env and updating t
 Generate an application key:
 ```php artisan key:generate```
 
+## 6. Database Setup
+To set up the MySQL database:
+
+1. Create a new MySQL database.
+
+2. Update the .env file with your database credentials:
+```DB_CONNECTION=mysql```
+```DB_HOST=127.0.0.1```
+```DB_PORT=3306```
+```DB_DATABASE=medkyu```
+```DB_USERNAME=root```
+```DB_PASSWORD=password```
+
 
