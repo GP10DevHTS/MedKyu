@@ -185,9 +185,19 @@ Regular maintenance tasks include:
 Updating dependencies
 Database optimization
 Security patches
-##
-##
-##
+## 22. Troubleshooting
+Common issues and their solutions are documented in the docs/troubleshooting.md file.
+
+## 23. Contributing
+We welcome contributions! Please see our CONTRIBUTING.md file for guidelines on how to contribute to this project.
+
+## 24. License
+This project is licensed under the MIT License. See the LICENSE file for more details.
+
+
+This `README.md` file should provide a comprehensive guide to understanding, setting up, and contributing to the MedKyu project, with sections tailored to Laravel, Livewire, and Jetstream.
+
+
 
 
 
