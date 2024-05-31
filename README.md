@@ -151,8 +151,25 @@ Medical Records
 Billing
 User Management
 
-##
-##
+## 14. Back-end Overview
+The back-end is built with Laravel and includes:
+
+RESTful API endpoints
+Authentication and Authorization with Jetstream
+Database interactions using Eloquent ORM
+
+## 15. Security
+Authentication using Laravel Jetstream
+Password hashing with bcrypt
+HTTPS for secure communication
+## 16. Performance Optimization
+Caching with Laravel Cache
+Database indexing
+Load balancing
+## 17. Error Handling
+Centralized error handling is implemented to catch and respond to errors consistently across the application.
+
+
 ##
 ##
 ##
