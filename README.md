@@ -140,7 +140,17 @@ MedKyu supports different user roles with specific permissions:
 
 ## 12. API Documentation
 The API documentation is available at ```http://localhost:8000/api-docs``` when the application is running.
-##
+
+## 13. Front-end Overview
+The front-end is built with Livewire and Laravel Jetstream and consists of the following main components:
+
+Dashboard
+Patient Management
+Appointment Scheduling
+Medical Records
+Billing
+User Management
+
 ##
 ##
 ##
