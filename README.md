@@ -55,3 +55,7 @@ MedKyu is a web application designed to manage the hospital operations of Kyambo
 - Deployment: Docker, Kubernetes
 - CI/CD: GitHub Actions
 - Testing: Jest, Mocha, Chai
+
+## 4. Installation
+
+To install the project locally, follow these steps:
