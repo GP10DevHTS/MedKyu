@@ -45,3 +45,13 @@ MedKyu is a web application designed to manage the hospital operations of Kyambo
 - User Management (Admins, Doctors, Nurses, Staff)
 - Inventory Management
 - Notifications and Alerts
+
+## 3. Technologies Used
+
+- Front-end: React, HTML, CSS, JavaScript
+- Back-end: Node.js, Express.js
+- Database: MongoDB
+- Authentication: JWT (JSON Web Tokens)
+- Deployment: Docker, Kubernetes
+- CI/CD: GitHub Actions
+- Testing: Jest, Mocha, Chai
