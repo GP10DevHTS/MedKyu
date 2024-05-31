@@ -28,3 +28,10 @@ web application for hostpital management tailored for kyambogo university medica
 22. [Troubleshooting](#troubleshooting)
 23. [Contributing](#contributing)
 24. [License](#license)
+
+
+## 1. Project Overview
+
+MedKyu is a web application designed to manage the hospital operations of Kyambogo University Medical Centre. It facilitates patient management, appointment scheduling, medical records, billing, and reporting.
+
+
