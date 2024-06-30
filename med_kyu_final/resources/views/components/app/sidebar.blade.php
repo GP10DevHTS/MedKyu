@@ -19,31 +19,32 @@
                     <path d="M10.7 18.7l1.4-1.4L7.8 13H20v-2H7.8l4.3-4.3-1.4-1.4L4 12z" />
                 </svg>
             </button>
-            <!-- Logo -->
-            <a class="block" wire:navigate href="{{ route('dashboard') }}">
-                <svg width="32" height="32" viewBox="0 0 32 32">
-                    <defs>
-                        <linearGradient x1="28.538%" y1="20.229%" x2="100%" y2="108.156%" id="logo-a">
-                            <stop stop-color="#A5B4FC" stop-opacity="0" offset="0%" />
-                            <stop stop-color="#A5B4FC" offset="100%" />
-                        </linearGradient>
-                        <linearGradient x1="88.638%" y1="29.267%" x2="22.42%" y2="100%" id="logo-b">
-                            <stop stop-color="#38BDF8" stop-opacity="0" offset="0%" />
-                            <stop stop-color="#38BDF8" offset="100%" />
-                        </linearGradient>
-                    </defs>
-                    <rect fill="#6366F1" width="32" height="32" rx="16" />
-                    <path
-                        d="M18.277.16C26.035 1.267 32 7.938 32 16c0 8.837-7.163 16-16 16a15.937 15.937 0 01-10.426-3.863L18.277.161z"
-                        fill="#4F46E5" />
-                    <path
-                        d="M7.404 2.503l18.339 26.19A15.93 15.93 0 0116 32C7.163 32 0 24.837 0 16 0 10.327 2.952 5.344 7.404 2.503z"
-                        fill="url(#logo-a)" />
-                    <path
-                        d="M2.223 24.14L29.777 7.86A15.926 15.926 0 0132 16c0 8.837-7.163 16-16 16-5.864 0-10.991-3.154-13.777-7.86z"
-                        fill="url(#logo-b)" />
-                </svg>
-            </a>
+           <!-- Logo -->
+<!-- Logo -->
+<a class="block" wire:navigate href="{{ route('dashboard') }}">
+    <svg width="60" height="40" viewBox="0 0 50 50">
+        <defs>
+            <linearGradient x1="28.538%" y1="20.229%" x2="100%" y2="108.156%" id="logo-a">
+                <stop stop-color="#A5B4FC" stop-opacity="0" offset="0%" />
+                <stop stop-color="#A5B4FC" offset="100%" />
+            </linearGradient>
+            <linearGradient x1="88.638%" y1="29.267%" x2="22.42%" y2="100%" id="logo-b">
+                <stop stop-color="#38BDF8" stop-opacity="0" offset="0%" />
+                <stop stop-color="#38BDF8" offset="100%" />
+            </linearGradient>
+        </defs>
+        <rect fill="#6366F1" width="32" height="32" rx="16" />
+        <path
+            d="M16 0c8.837 0 16 7.163 16 16s-7.163 16-16 16S0 24.837 0 16 7.163 0 16 0z"
+            fill="#4F46E5" />
+        <path
+            d="M21 13h-4V9h-2v4H11v2h4v4h2v-4h4v-2z"
+            fill="white" />
+        <text x="50%" y="48" font-family="Arial, Helvetica, sans-serif" font-size="20" fill="#4F46E5" text-anchor="middle">MedKyu</text>
+    </svg>
+</a>
+
+
         </div>
 
         <!-- Links -->
@@ -316,18 +317,21 @@
                                 <div class="flex items-center justify-between">
                                     <div class="flex items-center">
                                         <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
-                                            aria-hidden="true" role="img" width="16" height="16"
-                                            preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24">
-                                            <g fill="none" stroke="currentColor" stroke-width="2"
-                                                stroke-linecap="round" stroke-linejoin="round">
-                                                <rect x="3" y="4" width="18" height="18" rx="2"
-                                                    ry="2" />
-                                                <line x1="16" y1="2" x2="16" y2="6" />
-                                                <line x1="8" y1="2" x2="8" y2="6" />
-                                                <line x1="3" y1="10" x2="21" y2="10" />
-                                                <path d="M9 14l2 2l4-4" />
-                                            </g>
-                                        </svg>
+     aria-hidden="true" role="img" width="16" height="16"
+     preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24">
+    <g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <!-- Outline of the building -->
+        <rect x="3" y="7" width="18" height="14" rx="2" ry="2" />
+        <!-- Roof -->
+        <polygon points="12,3 2,9 22,9" fill="currentColor" />
+        <!-- Cross symbol -->
+        <line x1="12" y1="10" x2="12" y2="14" />
+        <line x1="10" y1="12" x2="14" y2="12" />
+        <!-- Door -->
+        <rect x="10" y="14" width="4" height="7" fill="currentColor" />
+    </g>
+</svg>
+
 
                                         <span
                                             class="text-sm font-medium ml-3 lg:opacity-0 lg:sidebar-expanded:opacity-100 2xl:opacity-100 duration-200">Facilities</span>
@@ -388,18 +392,22 @@
                             <div class="flex items-center justify-between">
                                 <div class="flex items-center">
                                     <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
-                                        aria-hidden="true" role="img" width="16" height="16"
-                                        preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24">
-                                        <g fill="none" stroke="currentColor" stroke-width="2"
-                                            stroke-linecap="round" stroke-linejoin="round">
-                                            <rect x="3" y="4" width="18" height="18" rx="2"
-                                                ry="2" />
-                                            <line x1="16" y1="2" x2="16" y2="6" />
-                                            <line x1="8" y1="2" x2="8" y2="6" />
-                                            <line x1="3" y1="10" x2="21" y2="10" />
-                                            <path d="M9 14l2 2l4-4" />
-                                        </g>
-                                    </svg>
+                                    aria-hidden="true" role="img" width="16" height="16"
+                                    preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24">
+                                   <g fill="none" stroke="currentColor" stroke-width="2"
+                                      stroke-linecap="round" stroke-linejoin="round">
+                                       <!-- Outline of the calendar -->
+                                       <rect x="3" y="4" width="18" height="18" rx="2" ry="2" />
+                                       <!-- Calendar top bars -->
+                                       <line x1="16" y1="2" x2="16" y2="6" />
+                                       <line x1="8" y1="2" x2="8" y2="6" />
+                                       <!-- Calendar separator line -->
+                                       <line x1="3" y1="10" x2="21" y2="10" />
+                                       <!-- Checkmark for attendance -->
+                                       <path d="M9 15l2 2l4-4" />
+                                   </g>
+                               </svg>
+                               
 
                                     <span
                                         class="text-sm font-medium ml-3 lg:opacity-0 lg:sidebar-expanded:opacity-100 2xl:opacity-100 duration-200">Attendances</span>
