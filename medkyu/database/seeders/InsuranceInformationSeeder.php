@@ -16,21 +16,21 @@ class InsuranceInformationSeeder extends Seeder
      */
     public function run()
     {
-        $faker = Faker::create();
+        // $faker = Faker::create();
 
-        $studentIds = User::role('student')->pluck('id')->toArray();
+        // $studentIds = User::role('student')->pluck('id')->toArray();
 
-        foreach ($studentIds as $studentId) {
-            DB::table('insurance_information')->insert([
-                'student_id' => $studentId,
-                'insurance_name' => $faker->company,
-                'insurance_number' => $faker->randomNumber(),
-                'insurance_provider' => $faker->company,
-                'policy_number' => $faker->randomNumber(),
-                'coverage_details' => $faker->paragraph,
-                'created_at' => now(),
-                'updated_at' => now(),
-            ]);
-        }
+        // foreach ($studentIds as $studentId) {
+        //     DB::table('insurance_information')->insert([
+        //         'student_id' => $studentId,
+        //         'insurance_name' => $faker->company,
+        //         'insurance_number' => $faker->randomNumber(),
+        //         'insurance_provider' => $faker->company,
+        //         'policy_number' => $faker->randomNumber(),
+        //         'coverage_details' => $faker->paragraph,
+        //         'created_at' => now(),
+        //         'updated_at' => now(),
+        //     ]);
+        // }
     }
 }

@@ -1,7 +1,7 @@
 <div class="w-full">
     {{-- Nothing in the world is as soft and yielding as water. --}}
     <x-danger-button class="w-full" wire:click="openCancelAppointmentModal">
-        {{ __('Cancel Appointment') }}
+        {{ __('Cancel') }}
     </x-danger-button>
 
     <x-dialog-modal wire:model="cancelAppointmentModal_isOpen">

@@ -1,8 +1,8 @@
 <div class="w-full">
     {{-- <section class=" w-full"> --}}
         {{-- <div class="mx-auto max-w-screen-xl px-1 py-5"> --}}
-            <div class="bg-white dark:bg-gray-800 shadow-lg sm:rounded-lg overflow-hidden">
-                <div class="flex flex-col md:flex-row items-center justify-between px-6 py-3">
+            <div class="bg-white dark:bg-gray-800 relative shadow-lg sm:rounded-lg overflow-hidden">
+                <div class="flex flex-col md:flex-row items-center justify-between space-y-3 md:space-y-0 md:space-x-4 p-4">
                     <div class="w-full md:w-1/2">
                         <form class="flex items-center">
                             <label for="simple-search" class="sr-only">Search</label>
@@ -58,13 +58,13 @@
                         </div>
                     </div>
                 </div>
-                <div class="w-full ">
+                <div class="w-full px-2 py-3">
                     <table class="w-full text-sm text-left text-gray-500  dark:text-gray-400 ">
                         <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
                             <tr class="border-b dark:border-gray-700 w-full">
                                 <th scope="col" class="px-4 py-3">Doctor Details</th>
                                 <th scope="col" class="px-4 py-3">Days Available</th>
-                                <th scope="col" class="px-4 py-3 whitespace-nowrap">Created At</th>
+                                <th scope="col" class="px-4 py-3">Created At</th>
                                 <th scope="col " class="text-right px-24 py-3">Action</th>
                             </tr>
                         </thead>
@@ -83,22 +83,22 @@
                                             </div>
                                         </div>
                                     </td>
-                                    <td class="px-4 py-3 font-normal text-gray-900 dark:text-white">
+                                    <td class="px-4 py-3 font-normal text-gray-900 whitespace-nowrap dark:text-white">
                                         @forelse ($doctor->availability->unique('day_of_week') as $availability)
                                             <span
-                                                class="inline-block  text-gray-800 dark:bg-gray-700 dark:text-gray-300 px-2 py-1 rounded-full text-xs font-semibold mr-2">{{ $availability->day_of_week }}</span>
+                                                class="inline-block bg-gray-200 text-gray-800 dark:bg-gray-700 dark:text-gray-300 px-2 py-1 rounded-full text-xs font-semibold mr-2">{{ $availability->day_of_week }}</span>
                                         @empty
                                             <p>No record</p>
                                         @endforelse
                                     </td>
-                                    <td class="px-4 py-3 font-normal text-gray-900 dark:text-white whitespace-nowrap">
+                                    <td class="px-4 py-3 font-normal text-gray-900 dark:text-white">
                                         {{ $doctor->created_at }}
                                     </td>
                                     <td class="text-center px-4 py-3 space-x-2 flex items-center">
                                         <a href="{{ route('users.doctor.details', $doctor->id) }}"
                                             class="font-medium border-2 border-black-200 px-4 py-2 rounded text-blue-500 dark:text-blue-500 hover:bg-gray-100 ">
                                             ACTIVITIES</a>
-                                        @livewire('edit-doctor-modal')
+                                        @livewire('edit-doctor-modal', ['doctor' => $doctor], key($doctor->id))
                                     </td>
                                 </tr>
                             @endforeach

@@ -98,7 +98,7 @@ class User extends Authenticatable
     }
     public function availability()
     {
-        return $this->hasMany(Availabilities::class, 'doctor_id');
+        return $this->hasMany(Availabilities::class,'doctor_id');
     }
     
     public function lab_tests()
