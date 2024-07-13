@@ -1,4 +1,4 @@
-<div wire:poll class="max-w-7xl mx-auto p-6 bg-gray-100">
+<div wire:poll class="mx-auto p-6 bg-gray-100">
     <div class="mb-6">
         <label for="department" class="block text-gray-700 font-semibold mb-2">Filter by Department</label>
         <select wire:model.live="selectedDepartment" class="form-select block w-full mt-1 rounded-lg border-gray-300 shadow-sm focus:ring-indigo-500 focus:border-indigo-500">
@@ -9,7 +9,7 @@
         </select>
     </div>
 
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+    <div class="w-full grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
         @forelse ($appointments as $appointment)
             <div wire:key="appointment-{{ $appointment->id }}" class="bg-white p-6 rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300">
                 <h2 class="text-lg font-bold mb-2 text-indigo-600">{{ $appointment->patient->user->name }}</h2>
@@ -19,7 +19,8 @@
                 <p class="text-gray-700"><strong>Start Time:</strong> {{ Carbon\Carbon::parse($appointment->start_time)->format('h:i A') }}</p>
                 <p class="text-gray-700"><strong>Reason:</strong> {{ $appointment->reason }}</p>
                 <p class="text-gray-700"><strong>Status:</strong> 
-                    <span class="inline-block px-2 py-1 rounded {{ $appointment->status == 0 ? 'bg-yellow-200 text-yellow-800' : ($appointment->status == 1 ? 'bg-green-200 text-green-800' : ($appointment->status == 2 ? 'bg-red-200 text-red-800' : 'bg-blue-200 text-blue-800')) }}">
+                    <span class="inline-block px-2 py-1 rounded 
+                        {{ $appointment->status == 0 ? 'bg-yellow-200 text-yellow-800' : ($appointment->status == 1 ? 'bg-green-200 text-green-800' : ($appointment->status == 2 ? 'bg-red-200 text-red-800' : 'bg-blue-200 text-blue-800')) }}">
                         {{ $appointment->status == 0 ? 'Pending' : ($appointment->status == 1 ? 'Confirmed' : ($appointment->status == 2 ? 'Cancelled' : 'Completed')) }}
                     </span>
                 </p>
@@ -38,14 +39,13 @@
                         @if ($appointment->doctor_id)
                             @can('complete-appointment')
                                 <div class="col-span-1">
-                                    <button wire:click="completeAppointment({{ $appointment->id }})" class="w-full bg-green-500 text-white font-bold p-1 rounded-lg hover:bg-green-600 transition-colors duration-300">Complete</button>
+                                    <button wire:click="completeAppointment({{ $appointment->id }})" class="w-full bg-green-500 text-white font-bold p-2 rounded-lg hover:bg-green-600 transition-colors duration-300">Complete</button>
                                 </div>
                             @endcan
-                        </div>
                         @endif
 
                         @can('assign-appointment-doctor')
-                            <div class="col-span-1 py-2">
+                            <div class="col-span-1 ">
                                 @if (App\Models\Doctor::where('user_id', auth()->user()->id)->exists())
                                     <button wire:click="assignSelf({{ $appointment->id }})" class="w-full bg-indigo-500 text-white font-bold py-2 px-4 rounded-lg hover:bg-indigo-600 transition-colors duration-300">Take on</button>
                                 @else
@@ -53,7 +53,7 @@
                                 @endif
                             </div>
                         @endcan
-                    {{-- </div> --}}
+                    </div>
                 @endif
             </div>
         @empty

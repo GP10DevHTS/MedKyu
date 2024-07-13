@@ -26,21 +26,21 @@ class UsersSeeder extends Seeder
      */
     public function run(): void
     {
-        $users = User::factory(100)->create();
-        $chances =  [1,2,3,4];
+        // $users = User::factory(100)->create();
+        // $chances =  [1,2,3,4];
 
-        foreach ($users as $user) {
-            $chance = array_rand($chances);
-            if ($chance == 1) {
-                $user->assignRole('admin');
-            } elseif ($chance == 2) {
-                Doctor::create(['user_id' => $user->id]);
-                $user->assignRole('doctor');
-            } elseif($chance == 3) {
-                Patient::create(['user_id' => $user->id, 'blood_group_id' => BloodGroup::all()->random()->id]);
-                $user->assignRole('patient');
-            }
-        }
+        // foreach ($users as $user) {
+        //     $chance = array_rand($chances);
+        //     if ($chance == 1) {
+        //         $user->assignRole('admin');
+        //     } elseif ($chance == 2) {
+        //         Doctor::create(['user_id' => $user->id]);
+        //         $user->assignRole('doctor');
+        //     } elseif($chance == 3) {
+        //         Patient::create(['user_id' => $user->id, 'blood_group_id' => BloodGroup::all()->random()->id]);
+        //         $user->assignRole('patient');
+        //     }
+        // }
 
         $departments = [
             ['department_name' => 'Emergency Department', 'department_description' => 'Provides immediate treatment for acute illnesses and injuries.'],

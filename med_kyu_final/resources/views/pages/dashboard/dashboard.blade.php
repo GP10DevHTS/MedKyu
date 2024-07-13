@@ -18,14 +18,14 @@
                 
             </div>
             
-            <div class="grid grid-cols-2 mb-4">
+            <div class="grid grid-cols-1 mb-4">
                 <div class="bg-white  p-4 hover:shadow-xl transition duration-300">
                     @livewire('dashboard.total-staff-members')
                 </div>
                 {{-- <div class="col-span-1 sm:col-span-2 lg:col-span-1 xl:col-span-1"> --}}
-                    <div class="bg-white  p-4 hover:shadow-xl transition duration-300">
+                    {{-- <div class="bg-white  p-4 hover:shadow-xl transition duration-300">
                         @livewire('dashboard.personal-attendance-record')
-                    </div>
+                    </div> --}}
                 {{-- </div> --}}
             </div>
             {{-- <div class="col-span-1 sm:col-span-2 lg:col-span-1 xl:col-span-1">

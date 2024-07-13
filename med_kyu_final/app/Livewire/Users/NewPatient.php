@@ -51,45 +51,45 @@ class NewPatient extends Component
     }
     public function create(Request $request){
         // Validate the request data if needed
-        $request->validate([
-            'regno' => 'required|string|min:10',
-            // 'pwd' => ['required', 'string', Password::defaults()],
-        ]);
+        // $request->validate([
+        //     'regno' => 'required|string|min:10',
+        //     // 'pwd' => ['required', 'string', Password::defaults()],
+        // ]);
 
         // Access the registration number from the request
-        $regno = $request->input('regno');
+        // $regno = $request->input('regno');
         // $password = Hash::make($request->input('pwd'));
 
         // Use the registration number as needed
-        $stdData = $this->getStudDetails($regno);
+        // $stdData = $this->getStudDetails($regno);
 
-        // Extract relevant student data
-        $surname = $stdData['surname'] . " " . $stdData['other_names'];
-        $email = $regno . '@std.kyu.ac.ug';
-        $avatar = $stdData['avatar'];
+        // // Extract relevant student data
+        // $surname = $stdData['surname'] . " " . $stdData['other_names'];
+        // $email = $regno . '@std.kyu.ac.ug';
+        // $avatar = $stdData['avatar'];
 
         //Check if the user already exists
-        if(User::where('email', $email)->exists()){
-            return redirect()->back()->with('error', 'User already exists!');
-        }
+        // if(User::where('email', $email)->exists()){
+        //     return redirect()->back()->with('error', 'User already exists!');
+        // }
         
 
         // Create the user
-        $user = User::create([
-            'name' => $surname,
-            'email' => $email,
-            // 'password' => $password,
-            // =====>>> 'profile_photo_path' => "https://myportal.kyu.ac.ug/photos/student-photos/".$avatar,
-        ]);
+        // $user = User::create([
+        //     'name' => $surname,
+        //     'email' => $email,
+        //     // 'password' => $password,
+        //     // =====>>> 'profile_photo_path' => "https://myportal.kyu.ac.ug/photos/student-photos/".$avatar,
+        // ]);
 
 
           // Download the avatar from the remote server and store it locally
-         $photo = "https://myportal.kyu.ac.ug/photos/student-photos/".$avatar;
-         $user->profile_photo_path = $photo;
-         $user->save();
+        //  $photo = "https://myportal.kyu.ac.ug/photos/student-photos/".$avatar;
+        //  $user->profile_photo_path = $photo;
+        //  $user->save();
 
 
-        Auth::login($user);
+        // Auth::login($user);
 
         
         

@@ -18,18 +18,18 @@
                 </x-slot>
 
                 <x-slot name="form">
-                    <div>
+                    {{-- <div>
                     <input type="checkbox" wire:model="is_student" id="is_student"
                     class="form-checkbox h-5 w-5 text-blue-600">
-                </div>
-                @if ($is_student)
-                <div class="col-span-6">
+                </div> --}}
+                {{-- @if ($is_student) --}}
+                {{-- <div class="col-span-6">
                     <x-label for="regno">{{ __('Registration Number') }} <span class="text-rose-500">*</span></x-label>
                     <x-input type="text" wire:model="regno" required />
-                </div>
+                </div> --}}
                 
                     
-                @endif
+                {{-- @endif --}}
                
                     <div class="col-span-6 grid grid-cols-12 gap-4">
                         <div class="col-span-12">

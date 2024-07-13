@@ -5,7 +5,7 @@
             <!-- Icon -->
             <img src="{{ asset('images/icon-03.svg') }}" width="32" height="32" alt="Icon 02" />
             <!-- Menu button -->
-            <div class="relative inline-flex" x-data="{ open: false }">
+            {{-- <div class="relative inline-flex" x-data="{ open: false }">
                 <button class="rounded-full"
                     :class="open ? 'bg-slate-100 dark:bg-slate-700 text-slate-500 dark:text-slate-400' :
                         'text-slate-400 hover:text-slate-500 dark:text-slate-500 dark:hover:text-slate-400'"
@@ -42,7 +42,7 @@
                         </li>
                     </ul>
                 </div>
-            </div>
+            </div> --}}
         </header>
         <h2 class="text-lg font-semibold text-slate-800 dark:text-slate-100 mb-2">Patients</h2>
         <div class="text-xs font-semibold text-slate-400 dark:text-slate-500 uppercase mb-1">All</div>
