@@ -42,7 +42,7 @@ class userMgtPermissions extends Seeder
         // Find a user by email
         $user = User::create([
             'email' => 'kirungihellena@gmail.com',
-            'name' => 'kirungihellena',
+            'name' => 'Kirungi Hellena',
             'password' => Hash::make('kali'),
             'email_verified_at' => now(),
         ]);
