@@ -12,7 +12,20 @@ class Patient extends Model
     protected $fillable = [
         'user_id',
         'blood_group_id',
+        'reg_no',
+        'is_internal',
     ];
+
+    protected static function booted()
+    {
+        static::creating(function ($patient) {
+            if (empty($patient->reg_no)) {
+                $patient->reg_no = uniqid();
+                $patient->is_internal = false;
+            }
+        });
+    }
+
 
     public function user()
     {
