@@ -18,25 +18,29 @@
                 </x-slot>
 
                 <x-slot name="form">
-                    {{-- <div>
-                    <input type="checkbox" wire:model="is_student" id="is_student"
-                    class="form-checkbox h-5 w-5 text-blue-600">
-                </div> --}}
-                {{-- @if ($is_student) --}}
-                {{-- <div class="col-span-6">
-                    <x-label for="regno">{{ __('Registration Number') }} <span class="text-rose-500">*</span></x-label>
-                    <x-input type="text" wire:model="regno" required />
-                </div> --}}
-                
-                    
-                {{-- @endif --}}
-               
+
+
                     <div class="col-span-6 grid grid-cols-12 gap-4">
                         <div class="col-span-12">
                             <x-validation-errors class="mb-4" />
                         </div>
-                       
-                       
+                        <div class="col-span-12">
+                            Personal Data
+                            <hr>
+                        </div>
+                        <div class="col-span-12">
+                            <input type="checkbox" wire:model.live="is_student" id="is_student"
+                                class="form-checkbox h-5 w-5 text-blue-600">
+                            <label for="is_student">Is Student?</label>
+                        </div>
+                        @if ($is_student)
+                            <div class="col-span-6">
+                                <x-label for="regno">{{ __('Registration Number') }} <span
+                                        class="text-rose-500">*</span></x-label>
+                                <x-input type="text" wire:model="regno" required />
+                            </div>
+                        @endif
+
 
                         <div class="col-span-6">
                             <x-label for="name">{{ __('Full Name') }} <span class="text-rose-500">*</span></x-label>
@@ -78,6 +82,31 @@
                                     class="text-rose-500">*</span></x-label>
                             <x-input class="block mt-1 w-full" type="date" wire:model="dob" />
                         </div>
+
+                        @if (!empty($avatar_path))
+                            <div class="col-span-6">
+                                <img class="h-24 w-24" src="{{ $avatar_path }}" alt="profile pic">
+                            </div>
+                        @endif
+
+
+                        {{-- next of kin --}}
+                        <div class="col-span-12 mt-4">
+                            Next of Kin Data
+                            <hr>
+                        </div>
+                        <div class="col-span-6">
+                            <x-label for="nok_name">{{ __('Name') }} <span class="text-rose-500">*</span></x-label>
+                            <x-input class="block mt-1 w-full" type="text" wire:model="nok_name" />
+                        </div>
+                        <div class="col-span-6">
+                            <x-label for="nok_email">{{ __('Email') }}</x-label>
+                            <x-input class="block mt-1 w-full" type="email" wire:model="nok_email" />
+                        </div>
+                        <div class="col-span-6">
+                            <x-label for="nok_phone">{{ __('Phone') }}</x-label>
+                            <x-input class="block mt-1 w-full" type="tel" wire:model="nok_phone" />
+                        </div>
                     </div>
 
                 </x-slot>
@@ -91,7 +120,14 @@
                 {{ __('Doctor Saved.') }}
             </x-action-message>
 
-            <x-button wire:click="registerNewUser">
+            <span wire:loading class="mx-2">loading ... please wait ...</span>
+
+            @if ($is_student)
+                <x-button wire:loading.attr="disabled" class="mx-2" wire:click="getStudentDetails">
+                    {{ __('Get Details') }}
+                </x-button>
+            @endif
+            <x-button wire:loading.attr="disabled" wire:click="registerNewUser">
                 {{ __('Save') }}
             </x-button>
             <x-secondary-button class="ms-3" wire:click="$set('newDoctorModal_isOpen', false)"

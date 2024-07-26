@@ -14,17 +14,21 @@ class Patient extends Model
         'blood_group_id',
         'reg_no',
         'is_internal',
+        'nok_name', // nok -> next of kin
+        'nok_phone', // nok -> next of kin
+        'nok_email', // nok -> next of kin
     ];
 
-    protected static function booted()
-    {
-        static::creating(function ($patient) {
-            if (empty($patient->reg_no)) {
-                $patient->reg_no = uniqid();
-                $patient->is_internal = false;
-            }
-        });
-    }
+    // protected static function booted()
+    // {
+    //     static::created(function ($patient) {
+    //         if (empty($patient->reg_no)) {
+    //             $patient->reg_no = uniqid();
+    //             $patient->is_internal = false;
+    //             $patient->save();
+    //         }
+    //     });
+    // }
 
 
     public function user()

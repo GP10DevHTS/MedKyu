@@ -64,6 +64,14 @@
                     </th>
                     <th
                         class="px-4 py-3 bg-gray-50 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                        Reg No.
+                    </th>
+                    <th
+                        class="px-4 py-3 bg-gray-50 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                        Internal?
+                    </th>
+                    <th
+                        class="px-4 py-3 bg-gray-50 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
                         Login?
                     </th>
                     <th
@@ -99,7 +107,13 @@
                                 </div>
                             </div>
                         </td>
-
+                        
+                        <td class="px-4 py-4 whitespace-nowrap text-sm text-gray-500">
+                            {{$user->patient->reg_no}}
+                        </td>
+                        <td class="px-4 py-4 whitespace-nowrap text-sm text-gray-500">
+                            {{$user->patient->is_internal ? "Yes" : "No"}}
+                        </td>
                         <td class="px-4 py-4 whitespace-nowrap text-sm text-gray-500">
                             @if ($user->deleted_at == null)
                                 <span
@@ -147,7 +161,7 @@
                     </tr>
                 @empty
                     <tr>
-                        <td class="p-2 whitespace-nowrap" colspan="5">
+                        <td class="p-2 whitespace-nowrap" colspan="7">
                             <div class="text-center">No users found.</div>
                         </td>
                     </tr>

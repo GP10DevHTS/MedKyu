@@ -1,5 +1,5 @@
-<div
-    class="m-4 flex flex-col w-1/2 space-y-4 bg-white dark:bg-slate-800 shadow-lg rounded-sm border border-slate-200 dark:border-slate-700 p-4">
+<div>
+    {{-- class="m-4 flex flex-col w-1/2 space-y-4 bg-white dark:bg-slate-800 shadow-lg rounded-sm border border-slate-200 dark:border-slate-700 p-4"> --}}
     {{-- Success is as dangerous as failure. --}}
     Blood Group:
     {{ $patient->bloodGroup ? $patient->bloodGroup->name : 'N/A' }}

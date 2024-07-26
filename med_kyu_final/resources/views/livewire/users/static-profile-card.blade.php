@@ -26,6 +26,11 @@
                     <p class=" px-2 py-1 font-medium text-teal-900 ">Gender:{{ $user->gender }}</p>
                     <p class=" px-2  font-medium text-indigo-900  ">DoB:{{ $user->dob ?? 'Na' }}</p>
                     <p class=" px-2  font-medium text-purple-900  ">Phone:{{ $user->phone ?? 'Na' }}</p>
+                    @if ($user->patient)
+                        <p class=" px-2  font-medium text-purple-900  text-center rounded-lg bg-slate-200 dark:bg-slate-700 dark:text-slate-300 mt-1 ">Id: {{ $user->patient->reg_no ?? '-' }}</p>
+                        <p class=" px-2  font-medium text-purple-900  text-center rounded-lg bg-slate-200 dark:bg-slate-700 dark:text-slate-300 mt-1 ">Internal?
+                            {{ $user->patient->is_internal ? 'Yes' : 'No' }}</p>
+                    @endif
                     {{-- <p class=" px-2  font-medium text-purple-900  ">{{ $user->phone_number_two ?? '' }}</p> --}}
                 </div>
                 <div class="px-6 py-4">
