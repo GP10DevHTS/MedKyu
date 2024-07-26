@@ -32,10 +32,7 @@
                                             <h2 class="text-xl font-semibold mb-4">Details</h2>
                                             @livewire('patients.blood-group-details', ['patient' => $user->patient->id], key('patient-blood-group'))
                                             <hr class="my-2">
-                                            <h2 class="text-xl font-semibold mb-4">Next of Kin</h2>
-                                            <p>Name: {{ $user->patient->nok_name ?? '-' }}</p>
-                                            <p>Email: {{ $user->patient->nok_email ?? '-' }}</p>
-                                            <p>Phone: {{ $user->patient->nok_phone ?? '-' }}</p>
+                                            
                                             @can('edit-patients')
                                                 @livewire('patients.edit-nok-details', ['patient' => $user->patient->id], key('patient-nok-details'))
                                             @endcan
