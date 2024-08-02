@@ -1,8 +1,5 @@
 <div>
-    {{-- Success is as dangerous as failure. --}}
-    {{-- clinical records <br>
-    -- each record can have: <br>
-        symptoms, complaint, diagnoses, lab-tests, treaments --}}
+
     @if (request()->routeIs('patient.clinical-records', ['user' => $user->id]))
         @livewire('patients.new-clinical-record', ['patient' => $user->patient->id], key('patient-new-clinical-record'))
 
